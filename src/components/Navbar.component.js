@@ -1,27 +1,40 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
 import "./Components.css";
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+} from "reactstrap";
 
-export default class Navbar extends Component {
+const NavbarComp = (props) => {
+  const [isOpen, setIsOpen] = useState(false);
 
-  render() {
-    return (
-      <nav className="navbar navbar-dark bg-dark navbar-expand-lg">
-        <Link to="/" className="navbar-brand">Grocery Store Tracker</Link>
-        <div className="collpase navbar-collapse">
-        <ul className="navbar-nav mr-auto">
-          <li className="navbar-item">
-          <Link to="/busyness" className="nav-link">View Busyness</Link>
-          </li>
-          <li className="navbar-item">
-          <Link to="/live" className="nav-link">Submit Live Busyness</Link>
-          </li>
-          <li className="navbar-item">
-          <Link to="/scheduler" className="nav-link">Submit Scheduled Trip</Link>
-          </li>
-        </ul>
-        </div>
-      </nav>
-    );
-  }
-}
+  const toggle = () => setIsOpen(!isOpen);
+  return (
+    <div>
+      <Navbar color="light" light expand="md">
+        <NavbarBrand href="/">Grocery Store Tracker</NavbarBrand>
+        <NavbarToggler onClick={toggle} />
+        <Collapse isOpen={isOpen} navbar>
+          <Nav className="mr-auto" navbar>
+            <NavItem>
+              <NavLink href="/busyness">View Busyness</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="/live">Submit Live Busyness</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="/scheduler">Submit Scheduled Trip</NavLink>
+            </NavItem>
+          </Nav>
+        </Collapse>
+      </Navbar>
+    </div>
+  );
+};
+
+export default NavbarComp;
