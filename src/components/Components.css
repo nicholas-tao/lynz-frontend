@@ -1,0 +1,38 @@
+.navbar-brand{
+    font-family: cursive;    /*navbar title*/
+    font-size: 30px;
+  }
+
+/* .first{
+  margin-bottom:35px;       /* what you see on the first page
+} */
+.text-left{
+  width: 50%;
+  float: left;
+  font-family: 'Comic Sans MS';       /* text on the left at the top*/
+  padding-top: 150px;
+  padding-bottom: 150px;
+  text-align:center;
+
+
+}
+.pic-right{
+  height: 500px;            /*pic on the right at the top*/
+  width: 50%;
+  float: right;
+}
+
+.text-right{                   /*text on the right a bit further down*/
+ width: 50%;
+ float: right;
+ font-family: 'Comic Sans MS';
+ padding-top: 250px;
+ padding-bottom: 250px;
+ text-align:center;
+}
+.pic-left{
+  margin-top:40px;
+  height: 600px;
+  width: 50%;
+  float: left;
+}
