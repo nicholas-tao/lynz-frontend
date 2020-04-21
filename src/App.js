@@ -1,5 +1,5 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
+/*import "bootstrap/dist/css/bootstrap.min.css"; */
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar.component";
@@ -20,7 +20,6 @@ function App() {
         <Route path="/live" component={Submitpage} />
         <Route path="/scheduler" component={Scheduler} />
       </div>
-      {/* <p id="testing"> testing the css </p> */}
     </Router>
   );
 }
