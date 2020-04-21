@@ -1,31 +1,45 @@
-import React, { useState } from "react";
-import "./Components.css";
+import React from "react";
 import {
-  Dropdown,
-  DropdownToggle,
+  ButtonDropdown,
   DropdownMenu,
   DropdownItem,
+  DropdownToggle,
 } from "reactstrap";
 
-const Submitpage = (props) => {
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+class SubmitPage extends React.Component {
+  constructor(props) {
+    super(props);
+    this.toggle = this.toggle.bind(this);
+    this.select = this.select.bind(this);
+    this.state = {
+      dropdownOpen: false,
+      value: "Select Busyness",
+    };
+  }
 
-  const toggle = () => setDropdownOpen((prevState) => !prevState);
+  toggle() {
+    this.setState({
+      dropdownOpen: !this.state.dropdownOpen,
+    });
+  }
 
-  return (
-    <Dropdown isOpen={dropdownOpen} toggle={toggle}>
-      <DropdownToggle caret>Select Busyness</DropdownToggle>
-      <DropdownMenu>
-        <DropdownItem>Not Busy</DropdownItem>
-        <DropdownItem>A Little Busy</DropdownItem>
-        <DropdownItem>Busy</DropdownItem>
-        <DropdownItem>Very Busy</DropdownItem>
-        <DropdownItem>Short Lineup to Get In</DropdownItem>
-        <DropdownItem>Long Lineup to Get In</DropdownItem>
-        <DropdownItem>Crazy (Do not come)</DropdownItem>
-      </DropdownMenu>
-    </Dropdown>
-  );
-};
+  select(event) {
+    this.setState({
+      dropdownOpen: !this.state.dropdownOpen,
+      value: event.target.innerText,
+    });
+  }
 
-export default Submitpage;
+  render() {
+    return (
+      <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+        <DropdownToggle>{this.state.value}</DropdownToggle>
+        <DropdownMenu>
+          <DropdownItem onClick={this.select}>Not Busy</DropdownItem>
+          <DropdownItem onClick={this.select}>Busy</DropdownItem>
+        </DropdownMenu>
+      </ButtonDropdown>
+    );
+  }
+}
+export default SubmitPage;

@@ -1,5 +1,5 @@
 .navbar-brand {
-  font-family: cursive; /*navbar title*/
+  /*navbar title*/
   font-size: 30px;
 }
 
@@ -9,8 +9,7 @@
 .text-left {
   width: 50%;
   float: left;
-  font-family: "Comic Sans MS"; /* text on the left at the top*/
-  padding-top: 150px;
+  padding-top: 150px; /* text on the left at the top*/
   padding-bottom: 150px;
   text-align: center;
 }
@@ -24,7 +23,6 @@
   /*text on the right a bit further down*/
   width: 50%;
   float: right;
-  font-family: "Comic Sans MS";
   padding-top: 250px;
   padding-bottom: 250px;
   text-align: center;
