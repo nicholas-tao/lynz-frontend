@@ -36,6 +36,7 @@ class SubmitPage extends React.Component {
         <DropdownToggle>{this.state.value}</DropdownToggle>
         <DropdownMenu>
           <DropdownItem onClick={this.select}>Not Busy</DropdownItem>
+          
           <DropdownItem onClick={this.select}>Busy</DropdownItem>
         </DropdownMenu>
       </ButtonDropdown>
