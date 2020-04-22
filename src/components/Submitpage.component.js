@@ -1,4 +1,6 @@
 import React from "react";
+import axios from "axios";
+
 import {
   ButtonDropdown,
   DropdownMenu,
@@ -6,7 +8,7 @@ import {
   DropdownToggle,
 } from "reactstrap";
 //import Form from "./Form";
-import "./Components.css"
+import "./Components.css";
 
 class SubmitPage extends React.Component {
   constructor(props) {
@@ -18,35 +20,33 @@ class SubmitPage extends React.Component {
     this.onChangeStoreAddress = this.onChangeStoreAddress.bind(this);
     this.onChangeStoreName = this.onChangeStoreName.bind(this);
 
-
     this.onSubmit = this.onSubmit.bind(this);
     this.state = {
       dropdownOpen: false,
-      busyValue: "Select Busyness",
+      busyness: "Select Busyness",
       address: "",
       storeAddress: "",
       storeName: "",
-  //    time:""   just printed out the time instead of adding it to the state
+      //    time:""   just printed out the time instead of adding it to the state
     };
   }
 
   onChangeAddress(e) {
     this.setState({
-      address: e.target.value
-    })
+      address: e.target.value,
+    });
   }
 
   onChangeStoreAddress(e) {
     this.setState({
-      storeAddress: e.target.value
-    })
+      storeAddress: e.target.value,
+    });
   }
   onChangeStoreName(e) {
     this.setState({
-      storeName: e.target.value
-    })
+      storeName: e.target.value,
+    });
   }
-
 
   toggle() {
     this.setState({
@@ -58,27 +58,14 @@ class SubmitPage extends React.Component {
     this.setState({
       dropdownOpen: !this.state.dropdownOpen,
       value: event.target.innerText,
-      busyValue: event.target.innerText
+      busyness: event.target.innerText,
     });
   }
 
   onSubmit(e) {
-    e.preventDefault();  //idk what this does; maybe prevents empty fields from being sent
+    e.preventDefault(); //idk what this does; maybe prevents empty fields from being sent
     // console.log(this.state);
     // console.log('hi');//doesnt output for some reason? look in console in inspect element
-
-    const address = {
-      address: this.state.address
-    }
-    const storeAddress = {
-      storeAddress: this.state.storeAddress
-    }
-    const busyValue = {
-      busyValue: this.state.busyValue
-    }
-    const storeName = {
-      storeName: this.state.storeName
-    }
 
     var date = new Date().getDate(); //Current Date
     var month = new Date().getMonth() + 1; //Current Month
@@ -86,8 +73,17 @@ class SubmitPage extends React.Component {
     var hours = new Date().getHours(); //Current Hours
     var min = new Date().getMinutes(); //Current Minutes
     var sec = new Date().getSeconds(); //Current Seconds
-    const realTime = date + '/' + month + '/' + year + ' ' + hours + ':' + min + ':' + sec;
-    
+    const realTime =
+      date + "/" + month + "/" + year + " " + hours + ":" + min + ":" + sec;
+
+    const busyness = {
+      //address: this.state.address,
+      storeAddress: this.state.storeAddress,
+      storeName: this.state.storeName,
+      busyness: this.state.busyness,
+      //time: realTime,
+    };
+
     // this.setState({
     //   time: date + '/' + month + '/' + year + ' ' + hours + ':' + min + ':' + sec
     // });
@@ -95,77 +91,87 @@ class SubmitPage extends React.Component {
     // const time = {
     //   time: this.state.time         idk why setting the time state doesnt work here
     // }
+    /*
     console.log(address);
     console.log(storeAddress);
-    console.log(busyValue);
+    console.log(busyness);
     console.log(storeName);
-    console.log(realTime)
-  //  console.log(this.state);
+    console.log(realTime);
+    */
+    //  console.log(this.state);
 
-    // axios.post('http://localhost:5000/users/add', user)
-    //   .then(res => console.log(res.data));
+    axios
+      .post("http://localhost:5000/busyness/add", busyness)
+      .then((res) => console.log(res.data));
 
     this.setState({
-      busyValue: "Select Busyness",
+      busyness: "Select Busyness",
       address: "",
       storeAddress: "",
-      storeName: "", 
-      time:""
-    })
+      storeName: "",
+      time: "",
+    });
   }
 
   render() {
     return (
-    <div className = 'all'>
-      <div className = 'pic'>
-        <p>picture here and some text maybe LOL</p>
-      </div>
-
-    <form onSubmit = {this.onSubmit} className = "form">
-      <div className = "busyness">
-        <div className = "enterAddress">
-          <input 
-            placeholder = "Enter your Address" 
-            value={this.state.address}
-            onChange = {this.onChangeAddress}
-            />
+      <div className="all">
+        <div className="pic">
+          <p>picture here and some text maybe LOL</p>
         </div>
-        <div className = "enterStoreName">
-          <input 
-              placeholder = "Enter the store name" 
-              value={this.state.storeName}
-              onChange = {this.onChangeStoreName}
+
+        <form onSubmit={this.onSubmit} className="form">
+          <div className="busyness">
+            <div className="enterAddress">
+              <input
+                placeholder="Enter your Address"
+                value={this.state.address}
+                onChange={this.onChangeAddress}
               />
-        </div>
-        <div className = "enterStoreAddress">
-          <input 
-              placeholder = "Enter the store address" 
-              value={this.state.storeAddress}
-              onChange = {this.onChangeStoreAddress}
+            </div>
+            <div className="enterStoreName">
+              <input
+                placeholder="Enter the store name"
+                value={this.state.storeName}
+                onChange={this.onChangeStoreName}
               />
-        </div>
-        <br></br>
+            </div>
+            <div className="enterStoreAddress">
+              <input
+                placeholder="Enter the store address"
+                value={this.state.storeAddress}
+                onChange={this.onChangeStoreAddress}
+              />
+            </div>
+            <br></br>
 
-        <div className = "submitToggle">
-          <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-            <DropdownToggle>{this.state.busyValue}</DropdownToggle>
-            <DropdownMenu>
-              <DropdownItem onClick={this.select}>Not Busy At All</DropdownItem>
-              <DropdownItem onClick={this.select}>Normal</DropdownItem>
-              <DropdownItem onClick={this.select}>Busy</DropdownItem>
-              <DropdownItem onClick={this.select}>Very Busy</DropdownItem>
-              <DropdownItem onClick={this.select}>Lineup to Get In</DropdownItem>
-            </DropdownMenu>
-          </ButtonDropdown>
-       </div>
-       <br></br>
+            <div className="submitToggle">
+              <ButtonDropdown
+                isOpen={this.state.dropdownOpen}
+                toggle={this.toggle}
+              >
+                <DropdownToggle>{this.state.busyness}</DropdownToggle>
+                <DropdownMenu>
+                  <DropdownItem onClick={this.select}>
+                    Not Busy At All
+                  </DropdownItem>
+                  <DropdownItem onClick={this.select}>Normal</DropdownItem>
+                  <DropdownItem onClick={this.select}>Busy</DropdownItem>
+                  <DropdownItem onClick={this.select}>Very Busy</DropdownItem>
+                  <DropdownItem onClick={this.select}>
+                    Lineup to Get In
+                  </DropdownItem>
+                </DropdownMenu>
+              </ButtonDropdown>
+            </div>
+            <br></br>
 
-       <div className="form-group">
-          <button onClick = {e => this.onSubmit(e)}> Submit! </button>
-        </div>
+            <div className="form-group">
+              <button onClick={(e) => this.onSubmit(e)}> Submit! </button>
+            </div>
+          </div>
+        </form>
       </div>
-    </form>
-  </div>
     );
   }
 }
