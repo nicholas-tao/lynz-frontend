@@ -7,7 +7,6 @@ import {
   DropdownItem,
   DropdownToggle,
 } from "reactstrap";
-//import Form from "./Form";
 import "./Components.css";
 
 class SubmitPage extends React.Component {
@@ -27,7 +26,6 @@ class SubmitPage extends React.Component {
       address: "",
       storeAddress: "",
       storeName: "",
-      //    time:""   just printed out the time instead of adding it to the state
     };
   }
 
@@ -64,41 +62,20 @@ class SubmitPage extends React.Component {
 
   onSubmit(e) {
     e.preventDefault(); //idk what this does; maybe prevents empty fields from being sent
-    // console.log(this.state);
-    // console.log('hi');//doesnt output for some reason? look in console in inspect element
-
-    var date = new Date().getDate(); //Current Date
-    var month = new Date().getMonth() + 1; //Current Month
-    var year = new Date().getFullYear(); //Current Year
-    var hours = new Date().getHours(); //Current Hours
-    var min = new Date().getMinutes(); //Current Minutes
-    var sec = new Date().getSeconds(); //Current Seconds
-    const realTime =
-      date + "/" + month + "/" + year + " " + hours + ":" + min + ":" + sec;
 
     const busyness = {
       //address: this.state.address,
       storeAddress: this.state.storeAddress,
       storeName: this.state.storeName,
       busyness: this.state.busyness,
-      //time: realTime,
     };
 
-    // this.setState({
-    //   time: date + '/' + month + '/' + year + ' ' + hours + ':' + min + ':' + sec
-    // });
-
-    // const time = {
-    //   time: this.state.time         idk why setting the time state doesnt work here
-    // }
     /*
     console.log(address);
     console.log(storeAddress);
     console.log(busyness);
     console.log(storeName);
-    console.log(realTime);
     */
-    //  console.log(this.state);
 
     axios
       .post("http://localhost:5000/busyness/add", busyness)
