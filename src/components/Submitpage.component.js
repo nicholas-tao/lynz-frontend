@@ -15,7 +15,9 @@ class SubmitPage extends React.Component {
     this.select = this.select.bind(this);
 
     this.onChangeAddress = this.onChangeAddress.bind(this);
-    this.onChangeStore = this.onChangeStore.bind(this);
+    this.onChangeStoreAddress = this.onChangeStoreAddress.bind(this);
+    this.onChangeStoreName = this.onChangeStoreName.bind(this);
+
 
     this.onSubmit = this.onSubmit.bind(this);
     this.state = {
@@ -23,6 +25,8 @@ class SubmitPage extends React.Component {
       busyValue: "Select Busyness",
       address: "",
       storeAddress: "",
+      storeName: "",
+  //    time:""   just printed out the time instead of adding it to the state
     };
   }
 
@@ -32,11 +36,17 @@ class SubmitPage extends React.Component {
     })
   }
 
-  onChangeStore(e) {
+  onChangeStoreAddress(e) {
     this.setState({
       storeAddress: e.target.value
     })
   }
+  onChangeStoreName(e) {
+    this.setState({
+      storeName: e.target.value
+    })
+  }
+
 
   toggle() {
     this.setState({
@@ -53,9 +63,9 @@ class SubmitPage extends React.Component {
   }
 
   onSubmit(e) {
-  //  e.preventDefault();  idk what this does; maybe prevents empty fields from being sent
-    console.log(this.state);
-    console.log('hi');//doesnt output for some reason? look in console in inspect element
+    e.preventDefault();  //idk what this does; maybe prevents empty fields from being sent
+    // console.log(this.state);
+    // console.log('hi');//doesnt output for some reason? look in console in inspect element
 
     const address = {
       address: this.state.address
@@ -66,25 +76,52 @@ class SubmitPage extends React.Component {
     const busyValue = {
       busyValue: this.state.busyValue
     }
+    const storeName = {
+      storeName: this.state.storeName
+    }
 
+    var date = new Date().getDate(); //Current Date
+    var month = new Date().getMonth() + 1; //Current Month
+    var year = new Date().getFullYear(); //Current Year
+    var hours = new Date().getHours(); //Current Hours
+    var min = new Date().getMinutes(); //Current Minutes
+    var sec = new Date().getSeconds(); //Current Seconds
+    const realTime = date + '/' + month + '/' + year + ' ' + hours + ':' + min + ':' + sec;
+    
+    // this.setState({
+    //   time: date + '/' + month + '/' + year + ' ' + hours + ':' + min + ':' + sec
+    // });
+
+    // const time = {
+    //   time: this.state.time         idk why setting the time state doesnt work here
+    // }
     console.log(address);
     console.log(storeAddress);
     console.log(busyValue);
-
-
+    console.log(storeName);
+    console.log(realTime)
+  //  console.log(this.state);
 
     // axios.post('http://localhost:5000/users/add', user)
     //   .then(res => console.log(res.data));
 
-    // this.setState({
-    //   username: ''
-    // })
+    this.setState({
+      busyValue: "Select Busyness",
+      address: "",
+      storeAddress: "",
+      storeName: "", 
+      time:""
+    })
   }
 
   render() {
     return (
-      
-    <form onSubmit = {this.onSubmit} id = "form">
+    <div className = 'all'>
+      <div className = 'pic'>
+        <p>picture here and some text maybe LOL</p>
+      </div>
+
+    <form onSubmit = {this.onSubmit} className = "form">
       <div className = "busyness">
         <div className = "enterAddress">
           <input 
@@ -93,12 +130,18 @@ class SubmitPage extends React.Component {
             onChange = {this.onChangeAddress}
             />
         </div>
-        <br></br>
-        <div className = "enterStore">
+        <div className = "enterStoreName">
+          <input 
+              placeholder = "Enter the store name" 
+              value={this.state.storeName}
+              onChange = {this.onChangeStoreName}
+              />
+        </div>
+        <div className = "enterStoreAddress">
           <input 
               placeholder = "Enter the store address" 
               value={this.state.storeAddress}
-              onChange = {this.onChangeStore}
+              onChange = {this.onChangeStoreAddress}
               />
         </div>
         <br></br>
@@ -118,10 +161,11 @@ class SubmitPage extends React.Component {
        <br></br>
 
        <div className="form-group">
-          <button onClick = {() => this.onSubmit()}> Submit! </button>
+          <button onClick = {e => this.onSubmit(e)}> Submit! </button>
         </div>
       </div>
     </form>
+  </div>
     );
   }
 }
