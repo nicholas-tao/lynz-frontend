@@ -39,3 +39,7 @@
 .all {
   width: 100%;
 }
+
+.form{
+  display:inline-block;
+}

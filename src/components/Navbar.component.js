@@ -16,7 +16,7 @@ const NavbarComp = (props) => {
   const toggle = () => setIsOpen(!isOpen);
   return (
     <div>
-      <Navbar className = "nav" color="light" blue expand="md" >
+      <Navbar className = "nav" color="light" light expand="md" >
         <NavbarBrand href="/" id = "navbar-brand">Grocery Store Tracker</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
