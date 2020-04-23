@@ -77,7 +77,7 @@ class Submitpage extends React.Component {
     console.log(storeName);
     */
 
-  /*  axios
+    /*  axios
       .post("http://localhost:5000/busyness/add", busyness)
       .then((res) => console.log(res.data));*/
 
@@ -86,7 +86,6 @@ class Submitpage extends React.Component {
       address: "",
       storeAddress: "",
       storeName: "",
-      time: "",
     });
   }
 
