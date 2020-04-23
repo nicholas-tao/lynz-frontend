@@ -8,6 +8,7 @@ import {
   NavLink,
 } from "reactstrap";
 import logo from "../images/shopping-cart.png";
+import corona from "..//images/corona.jpg"
 
 
 
@@ -25,13 +26,22 @@ class NavbarComp extends Component{
             className="d-inline-block align-top"
            />{' '}
            Grocery Store Tracker
-      </NavbarBrand>
+         </NavbarBrand>
             <Nav className="mr-auto">
               <NavItem>
                 <NavLink href="/busyness">View Busyness</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/live">Submit Live Busyness</NavLink>
+                <NavLink href="/submit">Submit Live Busyness</NavLink>
+              </NavItem>
+              <NavItem id = "coronapic">
+                  <img
+                      alt=""
+                      src= {corona}
+                      width="45px"
+                      height="45px"
+                      className="d-inline-block align-top"
+                   />{' '}
               </NavItem>
               {/* <NavItem>
                 <NavLink href="/scheduler">Submit Scheduled Trip</NavLink>

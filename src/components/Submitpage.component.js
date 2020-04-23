@@ -9,7 +9,7 @@ import {
 } from "reactstrap";
 import "./Components.css";
 
-class SubmitPage extends React.Component {
+class Submitpage extends React.Component {
   constructor(props) {
     super(props);
     this.toggle = this.toggle.bind(this);
@@ -152,4 +152,4 @@ class SubmitPage extends React.Component {
     );
   }
 }
-export default SubmitPage;
+export default Submitpage;

@@ -8,8 +8,12 @@
   background-color: #f2f3f7
 }
 
-#logo{
-  background-color: #f2f3f7;
+#coronapic{
+  float:right;
+}
+
+#coronapic2{
+  padding:5px;
 }
 
 .text-left {

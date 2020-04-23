@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./Components.css";
 import store from "../images/store.jpg";
 import busy from "../images/busy.jpg";
+import corona from "..//images/corona.jpg"
 import { Link } from 'react-router-dom';
 //import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from "react-scroll"
 
@@ -55,6 +56,13 @@ import { Link } from 'react-router-dom';
               visit the store. This would decrease crowds and community spread. Grocery Store Tracker helps people to social distance 
               as much as possible, so we can all be happy and healthy. 
             </p>
+            <img id = "coronapic2"
+              alt=""
+              src= {corona}
+              width="100px"
+              height="110px"
+              className="d-inline-block align-top"
+              />
           </body>
         {/* <Element name="test1" className="element" >
            <p>hi</p>
