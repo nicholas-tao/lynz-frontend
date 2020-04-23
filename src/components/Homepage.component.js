@@ -38,7 +38,7 @@ import { Link } from 'react-router-dom';
         </div>
 
         <div className = "third">
-          <body className = "thirdbodyleft" >
+          <div className = "thirdbodyleft" >
             <h2 className = "workstext"> How it works</h2>
             <p className = "longtext1"> <br></br><br></br>Grocery Store Tracker is an intuitive tool that helps you to shop more effectively. It works by collecting 
               the busyness of stores from real-live people. This is then displayed to you, so that you can make an
@@ -47,8 +47,8 @@ import { Link } from 'react-router-dom';
               the busyness level that
               you saw. This way, everyone can help everyone! 
             </p> 
-          </body>
-          <body className = "thirdbodyright">
+          </div>
+          <div className = "thirdbodyright">
          
             <h2 className = "coronatext"> How we are helping the COVID-19 Pandemic</h2>
             <p className = "longtext2"> <br></br>Grocery Store Tracker is not only meant for the convenience of shoppers.
@@ -63,20 +63,20 @@ import { Link } from 'react-router-dom';
               height="110px"
               className="d-inline-block align-top"
               />
-          </body>
+          </div>
         {/* <Element name="test1" className="element" >
            <p>hi</p>
         </Element> */}
         </div>
     
         <div className = "footer">
-            <body className = "bodyleft">
+            <div className = "bodyleft">
               <p className = "footertext1"> Created by Adam Lam, Matthew Jiao, Nicholas Tao</p>
-            </body>
+            </div>
 
-            <body className = "bodyright" >
+            <div className = "bodyright" >
               <p className = "footertext2"> &copy; Grocery Store Tracker 2020 </p>
-            </body>
+            </div>
         </div>
       </div>
     );
