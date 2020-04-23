@@ -10,8 +10,6 @@ import {
 import logo from "../images/shopping-cart.png";
 import corona from "..//images/corona.jpg"
 
-
-
 class NavbarComp extends Component{
   render(){
    return (
