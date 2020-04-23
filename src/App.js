@@ -1,8 +1,7 @@
 import React from "react";
 /*import "bootstrap/dist/css/bootstrap.min.css"; */
 import { BrowserRouter as Router, Route } from "react-router-dom";
-
-import Navbar from "./components/Navbar.component";
+import NavbarComp from "./components/NavbarComp.component";
 import Homepage from "./components/Homepage.component";
 import Viewpage from "./components/Viewpage.component";
 import Submitpage from "./components/Submitpage.component";
@@ -13,11 +12,11 @@ function App() {
   return (
     <Router>
       <div className="container">
-        <Navbar />
+        <NavbarComp />
         <br />
         <Route path="/" exact component={Homepage} />
         <Route path="/busyness" component={Viewpage} />
-        <Route path="/live" component={Submitpage} />
+        <Route path="/submit" component={Submitpage} />
         <Route path="/scheduler" component={Scheduler} />
       </div>
     </Router>

@@ -1,19 +1,26 @@
 #navbar-brand {
-  font-size: 30px;
-  font-weight: bold
+  font-size: 27px;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif
 }
 
+.nav{
+  background-color: #f2f3f7
+}
 
-/* .first{
-  margin-bottom:35px;       /* what you see on the first page
-} */
+#logo{
+  background-color: #f2f3f7;
+}
+
 .text-left {
   width: 50%;
   float: left;
   padding-top: 150px; /* text on the left at the top*/
   padding-bottom: 150px;
   text-align: center;
+  color: #102c59;
 }
+
 .pic-right {
   height: 500px; /*pic on the right at the top*/
   width: 50%;
@@ -21,26 +28,108 @@
 }
 
 .text-right {
-  /*text on the right a bit further down*/
-  width: 50%;
+  width: 50%;                                 /*text on the right a bit further down*/
   float: right;
   padding-top: 250px;
   padding-bottom: 250px;
   text-align: center;
+  color: #102c59
 }
+
 .pic-left {
-  margin-top: 60px;
-  margin-bottom:40px;
+  margin-top: 50px;
+  margin-bottom:52px;            /* costco pic*/
   height: 550px;
   width: 50%;
   float: left;
 }
 
 .all {
-  width: 100%;
+  width: 100%;     /* the whole div*/
 }
 
 .form{
-  text-align:center;
+  text-align:center;   /*the form on the submit page*/
   padding-top:300px;
+}
+
+.workstext{
+  color: #ffffff;
+}
+
+.coronatext{
+  color: #ffffff;
+}
+
+.longtext1{
+  color: #ffffff;   /* long text on the left (how it works*/
+  font-size: 20px
+}
+
+.longtext2{
+  color: #ffffff;     /*long text on the right (corona)*/
+  font-size: 20px
+}
+
+.link2{
+  color:rgb(29, 17, 85);    /*color of the link*/
+}
+
+.third{
+  width:100%;                     /*third big div*/
+  padding-bottom: 20px;
+}
+
+.thirdbodyleft{
+  width: 49%;
+  float:left;             /* third body stuff on the left*/
+  text-align: center;
+  background-color: #52c5f2;
+  height: 500px;
+  border-radius:4%;
+  padding-top:20px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.thirdbodyright{
+  padding-top:20px;
+  padding-left: 25px;
+  padding-right: 25px;
+  border-radius:4%;
+  height: 500px;
+  width: 49%;
+  float: right;         /*third body on the right*/
+  text-align: center;
+  background-color: #0ecc7a;
+}
+
+.bodyleft{
+  margin-top: 10px;      /*footer body on the left*/
+  width:50%;
+  float:left;
+  height:100px;
+  background-color: #080c36
+}
+
+.bodyright{
+  margin-top: 10px;   /*footer body on the right*/
+  width:50%;
+  float:right;
+  height:100px;
+  background-color:#080c36
+}
+
+.footertext1{
+  color:white;
+  float:left;     
+  padding-top:60px;
+  padding-left:10px;
+}
+
+.footertext2{
+  color:white;
+  float:right;
+  padding-top:60px;
+  padding-right: 10px;
 }

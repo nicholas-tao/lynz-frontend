@@ -77,9 +77,9 @@ class SubmitPage extends React.Component {
     console.log(storeName);
     */
 
-    axios
+  /*  axios
       .post("http://localhost:5000/busyness/add", busyness)
-      .then((res) => console.log(res.data));
+      .then((res) => console.log(res.data));*/
 
     this.setState({
       busyness: "Select Busyness",
