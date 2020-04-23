@@ -1,11 +1,5 @@
 import React from "react";
 import axios from "axios";
-// import {
-//   ButtonDropdown,
-//   DropdownMenu,
-//   DropdownItem,
-//   DropdownToggle,
-// } from "reactstrap";
 import "./Components.css";
 
 class Viewpage extends React.Component {
@@ -15,9 +9,9 @@ class Viewpage extends React.Component {
     this.onSubmit = this.onSubmit.bind(this);
 
     this.state = {
-      latitude:"",
-      longitude:"",
-      radius: ""
+      latitude: "",
+      longitude: "",
+      radius: "",
     };
   }
 
@@ -28,47 +22,39 @@ class Viewpage extends React.Component {
   }
 
   componentDidMount() {
-    navigator.geolocation.getCurrentPosition(function(position) {
-      // console.log("Latitude is :", position.coords.latitude);
-      // console.log("Longitude is :", position.coords.longitude);
-      this.setState({
-        latitude: position.coords.latitude,
-        longitude: position.coords.longitude
-      }) 
-    }.bind(this))
+    navigator.geolocation.getCurrentPosition(
+      function (position) {
+        // console.log("Latitude is :", position.coords.latitude);
+        // console.log("Longitude is :", position.coords.longitude);
+        this.setState({
+          latitude: position.coords.latitude,
+          longitude: position.coords.longitude,
+        });
+      }.bind(this)
+    );
   }
-  
 
   onSubmit(e) {
-    e.preventDefault(); //idk what this does; maybe prevents empty fields from being sent 
+    e.preventDefault();
 
-    const coordsradius = {
-      latitude: this.state.latiude,
+    const coordsAndRadius = {
+      latitude: this.state.latitude,
       longitude: this.state.longitude,
-      radius: this.state.radius
+      radius: this.state.radius,
     };
 
-    /*
-    console.log(address);
-    console.log(storeAddress);
-    console.log(busyness);
-    console.log(storeName);
-    */
-   console.log(this.state);
-
-  /*  axios
-      .post("http://localhost:5000/busyness/add", coordsradius)
-      .then((res) => console.log(res.data));*/
+    axios
+      .post("http://localhost:5000/busyness/view", coordsAndRadius)
+      .then((res) => console.log(res.data));
 
     this.setState({
-      radius: ""
+      radius: "",
     });
   }
 
   render() {
     return (
       <div className="all">
-
         <form onSubmit={this.onSubmit} className="form1">
           <div className="viewing">
             <div className="InputRadius">
@@ -88,7 +74,6 @@ class Viewpage extends React.Component {
         <div className="grid">
           <p>heres where the stuff actually goes LOL</p>
         </div>
-
       </div>
     );
   }

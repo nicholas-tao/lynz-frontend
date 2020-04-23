@@ -15,7 +15,6 @@ class Submitpage extends React.Component {
     this.toggle = this.toggle.bind(this);
     this.select = this.select.bind(this);
 
-    this.onChangeAddress = this.onChangeAddress.bind(this);
     this.onChangeStoreAddress = this.onChangeStoreAddress.bind(this);
     this.onChangeStoreName = this.onChangeStoreName.bind(this);
 
@@ -23,16 +22,9 @@ class Submitpage extends React.Component {
     this.state = {
       dropdownOpen: false,
       busyness: "Select Busyness",
-      address: "",
       storeAddress: "",
       storeName: "",
     };
-  }
-
-  onChangeAddress(e) {
-    this.setState({
-      address: e.target.value,
-    });
   }
 
   onChangeStoreAddress(e) {
@@ -64,14 +56,12 @@ class Submitpage extends React.Component {
     e.preventDefault(); //idk what this does; maybe prevents empty fields from being sent
 
     const busyness = {
-      //address: this.state.address,
       storeAddress: this.state.storeAddress,
       storeName: this.state.storeName,
       busyness: this.state.busyness,
     };
 
     /*
-    console.log(address);
     console.log(storeAddress);
     console.log(busyness);
     console.log(storeName);
@@ -83,7 +73,6 @@ class Submitpage extends React.Component {
 
     this.setState({
       busyness: "Select Busyness",
-      address: "",
       storeAddress: "",
       storeName: "",
     });
@@ -98,13 +87,6 @@ class Submitpage extends React.Component {
 
         <form onSubmit={this.onSubmit} className="form">
           <div className="busyness">
-            <div className="enterAddress">
-              <input
-                placeholder="Enter your Address"
-                value={this.state.address}
-                onChange={this.onChangeAddress}
-              />
-            </div>
             <div className="enterStoreName">
               <input
                 placeholder="Enter the store name"
