@@ -34,15 +34,6 @@ class NavbarComp extends Component{
               <NavItem>
                 <NavLink href="/submit">Submit Live Busyness</NavLink>
               </NavItem>
-              <NavItem id = "coronapic">
-                  <img
-                      alt=""
-                      src= {corona}
-                      width="45px"
-                      height="45px"
-                      className="d-inline-block align-top"
-                   />{' '}
-              </NavItem>
               {/* <NavItem>
                 <NavLink href="/scheduler">Submit Scheduled Trip</NavLink>
               </NavItem> */}
