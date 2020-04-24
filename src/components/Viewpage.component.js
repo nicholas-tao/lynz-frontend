@@ -12,6 +12,7 @@ class Viewpage extends React.Component {
       latitude: "",
       longitude: "",
       radius: "",
+     // storesdata:""
     };
   }
 
@@ -42,11 +43,21 @@ class Viewpage extends React.Component {
       longitude: this.state.longitude,
       radius: this.state.radius,
     };
-
-    axios
+    console.log(this.state);
+  /*  axios
       .post("http://localhost:5000/busyness/view", coordsAndRadius)
       .then((res) => console.log(res.data));
+*/
 
+
+/* axios.get('http://localhost:5000/busyness/getstores')
+   .then(response => {
+     this.setState({ storedata: response.data });
+   })
+   .catch((error) => {
+      console.log(error);
+   })
+   */
     this.setState({
       radius: "",
     });
@@ -55,7 +66,6 @@ class Viewpage extends React.Component {
   render() {
     return (
       <div className="all">
-        <form onSubmit={this.onSubmit} className="form1">
           <div className="viewing">
             <div className="InputRadius">
               <input
@@ -65,14 +75,23 @@ class Viewpage extends React.Component {
               />
             </div>
 
-            <div className="form-group1">
+            <div className="button1">
               <button onClick={(e) => this.onSubmit(e)}> Submit! </button>
             </div>
           </div>
-        </form>
 
         <div className="grid">
           <p>heres where the stuff actually goes LOL</p>
+        </div>
+
+        <div className = "footerbottom">
+            <div className = "bodyleft">
+              <p className = "footertext1"> Created by Adam Lam, Matthew Jiao, Nicholas Tao</p>
+            </div>
+
+            <div className = "bodyright" >
+              <p className = "footertext2"> &copy; Grocery Store Tracker 2020 </p>
+            </div>
         </div>
       </div>
     );

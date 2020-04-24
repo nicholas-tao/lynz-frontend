@@ -4,10 +4,14 @@ import store from "../images/store.jpg";
 import busy from "../images/busy.jpg";
 import corona from "..//images/corona.jpg"
 import { Link } from 'react-router-dom';
+import Viewpage from "./Viewpage.component.js";
+import Submitpage from "./Submitpage.component.js";
 //import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from "react-scroll"
 
 
  export default class Homepage extends Component {
+
+
   render() {
     return (
       <div id="all">

@@ -8,6 +8,7 @@ import {
   DropdownToggle,
 } from "reactstrap";
 import "./Components.css";
+import helping from "..//images/helpingedit.jpg"
 
 class Submitpage extends React.Component {
   constructor(props) {
@@ -24,7 +25,21 @@ class Submitpage extends React.Component {
       busyness: "Select Busyness",
       storeAddress: "",
       storeName: "",
+      latitude:"",
+      longitude:""
     };
+  }
+  componentDidMount() {
+    navigator.geolocation.getCurrentPosition(
+      function (position) {
+        // console.log("Latitude is :", position.coords.latitude);
+        // console.log("Longitude is :", position.coords.longitude);
+        this.setState({
+          latitude: position.coords.latitude,
+          longitude: position.coords.longitude
+        });
+      }.bind(this)
+    );
   }
 
   onChangeStoreAddress(e) {
@@ -59,6 +74,8 @@ class Submitpage extends React.Component {
       storeAddress: this.state.storeAddress,
       storeName: this.state.storeName,
       busyness: this.state.busyness,
+      latitude: this.state.latitude,
+      longitude: this.state.longitude
     };
 
     /*
@@ -66,7 +83,7 @@ class Submitpage extends React.Component {
     console.log(busyness);
     console.log(storeName);
     */
-
+    console.log(this.state);
     /*  axios
       .post("http://localhost:5000/busyness/add", busyness)
       .then((res) => console.log(res.data));*/
@@ -80,56 +97,76 @@ class Submitpage extends React.Component {
 
   render() {
     return (
-      <div className="all">
-        <div className="pic">
-          <p>picture here and some text maybe LOL</p>
+
+      <div className="busyness">
+        <div className="enterStoreName">
+          <input
+            placeholder="Enter the store name"
+            value={this.state.storeName}
+            onChange={this.onChangeStoreName}
+          />
+        </div>
+        <div className="enterStoreAddress">
+          <input
+            placeholder="Enter the store address"
+            value={this.state.storeAddress}
+            onChange={this.onChangeStoreAddress}
+          />
         </div>
 
-        <form onSubmit={this.onSubmit} className="form">
-          <div className="busyness">
-            <div className="enterStoreName">
-              <input
-                placeholder="Enter the store name"
-                value={this.state.storeName}
-                onChange={this.onChangeStoreName}
-              />
-            </div>
-            <div className="enterStoreAddress">
-              <input
-                placeholder="Enter the store address"
-                value={this.state.storeAddress}
-                onChange={this.onChangeStoreAddress}
-              />
-            </div>
-            <br></br>
+        <div className="submitToggle">
+          <ButtonDropdown
+            isOpen={this.state.dropdownOpen}
+            toggle={this.toggle}
+          >
+          <DropdownToggle>{this.state.busyness}</DropdownToggle>
+          <DropdownMenu>
+            <DropdownItem onClick={this.select}>
+              Not Busy At All
+            </DropdownItem>
+            <DropdownItem onClick={this.select}>Normal</DropdownItem>
+            <DropdownItem onClick={this.select}>Busy</DropdownItem>
+            <DropdownItem onClick={this.select}>Very Busy</DropdownItem>
+            <DropdownItem onClick={this.select}>
+              Lineup to Get In
+            </DropdownItem>
+          </DropdownMenu>
+        </ButtonDropdown>
+        </div>
 
-            <div className="submitToggle">
-              <ButtonDropdown
-                isOpen={this.state.dropdownOpen}
-                toggle={this.toggle}
-              >
-                <DropdownToggle>{this.state.busyness}</DropdownToggle>
-                <DropdownMenu>
-                  <DropdownItem onClick={this.select}>
-                    Not Busy At All
-                  </DropdownItem>
-                  <DropdownItem onClick={this.select}>Normal</DropdownItem>
-                  <DropdownItem onClick={this.select}>Busy</DropdownItem>
-                  <DropdownItem onClick={this.select}>Very Busy</DropdownItem>
-                  <DropdownItem onClick={this.select}>
-                    Lineup to Get In
-                  </DropdownItem>
-                </DropdownMenu>
-              </ButtonDropdown>
-            </div>
-            <br></br>
+        <div className="button2">
+          <button onClick={(e) => this.onSubmit(e)}> Submit! </button>
+        </div>
+        <div className="helpingpic">
+         <img id = "helping"
+            alt=""
+            src= {helping}
+            width="1100px"
+            height="500px"
+          />
+        </div>
 
-            <div className="form-group">
-              <button onClick={(e) => this.onSubmit(e)}> Submit! </button>
+        <div className = "footer">
+            <div className = "bodyleft">
+              <p className = "footertext1"> Created by Adam Lam, Matthew Jiao, Nicholas Tao</p>
             </div>
-          </div>
-        </form>
+
+            <div className = "bodyright" >
+              <p className = "footertext2"> &copy; Grocery Store Tracker 2020 </p>
+            </div>
+        </div>
+
       </div>
+        
+       /*} <div className = "footerbottom">
+            <div className = "bodyleft">
+              <p className = "footertext1"> Created by Adam Lam, Matthew Jiao, Nicholas Tao</p>
+            </div>
+
+            <div className = "bodyright" >
+              <p className = "footertext2"> &copy; Grocery Store Tracker 2020 </p>
+            </div>
+    </div>*/
     );
   }
 }
