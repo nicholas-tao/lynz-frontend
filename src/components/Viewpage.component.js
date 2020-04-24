@@ -12,7 +12,7 @@ class Viewpage extends React.Component {
       latitude: "",
       longitude: "",
       radius: "",
-     // storesdata:""
+      // storesdata:""
     };
   }
 
@@ -44,20 +44,21 @@ class Viewpage extends React.Component {
       radius: this.state.radius,
     };
     console.log(this.state);
-  /*  axios
+    /*  axios
       .post("http://localhost:5000/busyness/view", coordsAndRadius)
       .then((res) => console.log(res.data));
 */
 
+    axios
+      .get("http://localhost:5000/busyness/getstores")
+      .then((response) => {
+        //this.setState({ storedata: response.data });
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
 
-/* axios.get('http://localhost:5000/busyness/getstores')
-   .then(response => {
-     this.setState({ storedata: response.data });
-   })
-   .catch((error) => {
-      console.log(error);
-   })
-   */
     this.setState({
       radius: "",
     });
@@ -66,32 +67,35 @@ class Viewpage extends React.Component {
   render() {
     return (
       <div className="all">
-          <div className="viewing">
-            <div className="InputRadius">
-              <input
-                placeholder="Enter the Radius"
-                value={this.state.radius}
-                onChange={this.onChangeRadius}
-              />
-            </div>
-
-            <div className="button1">
-              <button onClick={(e) => this.onSubmit(e)}> Submit! </button>
-            </div>
+        <div className="viewing">
+          <div className="InputRadius">
+            <input
+              placeholder="Enter the Radius"
+              value={this.state.radius}
+              onChange={this.onChangeRadius}
+            />
           </div>
+
+          <div className="button1">
+            <button onClick={(e) => this.onSubmit(e)}> Submit! </button>
+          </div>
+        </div>
 
         <div className="grid">
           <p>heres where the stuff actually goes LOL</p>
         </div>
 
-        <div className = "footerbottom">
-            <div className = "bodyleft">
-              <p className = "footertext1"> Created by Adam Lam, Matthew Jiao, Nicholas Tao</p>
-            </div>
+        <div className="footerbottom">
+          <div className="bodyleft">
+            <p className="footertext1">
+              {" "}
+              Created by Adam Lam, Matthew Jiao, Nicholas Tao
+            </p>
+          </div>
 
-            <div className = "bodyright" >
-              <p className = "footertext2"> &copy; Grocery Store Tracker 2020 </p>
-            </div>
+          <div className="bodyright">
+            <p className="footertext2"> &copy; Grocery Store Tracker 2020 </p>
+          </div>
         </div>
       </div>
     );
