@@ -286,7 +286,7 @@ toggleHoverState6(state) {
  
         
           <div className="button2">
-            <button className = "actualButton" onClick={(e) => this.onSubmit(e)}> Submit! </button>
+            <button className = "actualButton2" onClick={(e) => this.onSubmit(e)}> Submit! </button>
           </div>
         
 

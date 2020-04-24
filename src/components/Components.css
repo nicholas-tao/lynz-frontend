@@ -147,13 +147,16 @@
 }
 
 .viewing{
-  display:inline-block;             /*the whole div on viewing page*/
+  display:inline-block;             /*the whole div at the on viewing page*/
 }
-.inputRadius{
-  display:inline-block;             /*radius div*/
+
+.actualButton1{
+  border: 2px solid rgb(29, 42, 156); 
+  color: rgb(29, 42, 156);
+  
 }
-.button1{
-  display:inline-block;          /*submit button*/
+#radius{
+  margin-right:30px;
 }
 
 /*Submitpage*/
@@ -165,7 +168,7 @@
 .submitter{              /*busyness submit button*/
   color: rgb(29, 42, 156);
 }
-.actualButton{
+.actualButton2{
   border: 2px solid rgb(29, 42, 156); 
   color: rgb(29, 42, 156);
 }
@@ -187,12 +190,11 @@ padding-top:5px;
   width:33.3%;
   text-align: right;
 }
-
 .location5{          /*textbox*/
   width:50%;
  }
 
  .hover1{
-   text-align:center;
+   text-align:center;    /*hover text*/
  }
  

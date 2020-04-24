@@ -2,20 +2,31 @@ import React from "react";
 import axios from "axios";
 import "./Components.css";
 import styled from 'styled-components';
+import test from "./test.json"
 
 class Viewpage extends React.Component {
   constructor(props) {
     super(props);
     this.onChangeRadius = this.onChangeRadius.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+    this.changeStoredata = this.changeStoredata.bind(this);
 
     this.state = {
       latitude: "",
       longitude: "",
       radius: "",
-      // storesdata:""
+      storedata: "hi",
+      received: true
     };
   }
+
+  changeStoredata(e){
+    console.log(e);
+    this.setState({
+      storedata: e.data
+    })
+  }
+
 
   onChangeRadius(e) {
     this.setState({
@@ -44,21 +55,24 @@ class Viewpage extends React.Component {
       longitude: this.state.longitude,
       radius: this.state.radius,
     };
-    console.log(this.state);
     /*  axios
       .post("http://localhost:5000/busyness/view", coordsAndRadius)
       .then((res) => console.log(res.data));
 */
 
-    axios
+   /* axios
       .get("http://localhost:5000/busyness/getstores")
       .then((response) => {
-        //this.setState({ storedata: response.data });
+        this.setState({ storedata: response.data });
         console.log(response.data);
       })
       .catch((error) => {
         console.log(error);
-      });
+      });*/
+    
+
+    console.log(this.state);
+
 
     this.setState({
       radius: "",
@@ -66,24 +80,26 @@ class Viewpage extends React.Component {
   }
 
   render() {
+    //think i need code here 
+    //if received
+    
     return (
       <div className="all">
         <div className="viewing">
-          <div className="InputRadius">
-            <input
+            <input id = "radius"
               placeholder="Enter the Radius"
               value={this.state.radius}
               onChange={this.onChangeRadius}
             />
-          </div>
-
-          <div className="button1">
-            <button className = "actualButton" onClick={(e) => this.onSubmit(e)}> Submit! </button>
-          </div>
+            <button className = "actualButton1" onClick={(e) => {this.onSubmit(e);  this.changeStoredata(test);}}> Get Stores! </button>
         </div>
+
 
         <div className="grid">
           <p>heres where the stuff actually goes LOL</p>
+          <p> 
+            
+          </p>
         </div>
 
         <div className="footerbottom">
