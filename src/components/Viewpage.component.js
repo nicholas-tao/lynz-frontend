@@ -77,7 +77,7 @@ class Viewpage extends React.Component {
           </div>
 
           <div className="button1">
-            <button onClick={(e) => this.onSubmit(e)}> Submit! </button>
+            <button className = "actualButton" onClick={(e) => this.onSubmit(e)}> Submit! </button>
           </div>
         </div>
 

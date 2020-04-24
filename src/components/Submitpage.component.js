@@ -1,5 +1,13 @@
 import React from "react";
 import axios from "axios";
+import Script from 'react-load-script'
+
+import PlacesAutocomplete from 'react-places-autocomplete';
+import {
+  geocodeByAddress,
+  geocodeByPlaceId,
+  getLatLng,
+} from 'react-places-autocomplete';
 
 import {
   ButtonDropdown,
@@ -23,12 +31,18 @@ class Submitpage extends React.Component {
     this.state = {
       dropdownOpen: false,
       busyness: "Select Busyness",
-      storeAddress: "",
-      storeName: "",
       latitude:"",
-      longitude:""
+      longitude:"",
+      address:""
     };
   }
+//autocomplete stuff
+  handleChange = address => {
+    this.setState({ address });
+  };
+
+
+//other stuff
   componentDidMount() {
     navigator.geolocation.getCurrentPosition(
       function (position) {
@@ -71,18 +85,12 @@ class Submitpage extends React.Component {
     e.preventDefault(); //idk what this does; maybe prevents empty fields from being sent
 
     const busyness = {
-      storeAddress: this.state.storeAddress,
-      storeName: this.state.storeName,
+      address: this.state.address,
       busyness: this.state.busyness,
       latitude: this.state.latitude,
       longitude: this.state.longitude
     };
 
-    /*
-    console.log(storeAddress);
-    console.log(busyness);
-    console.log(storeName);
-    */
     console.log(this.state);
     /*  axios
       .post("http://localhost:5000/busyness/add", busyness)
@@ -90,53 +98,80 @@ class Submitpage extends React.Component {
 
     this.setState({
       busyness: "Select Busyness",
-      storeAddress: "",
-      storeName: "",
+      address: "",
     });
   }
+  
 
   render() {
     return (
+      <div className = "allsubmit">
+        <div className="busyness">
+          <div className = "location">
+            <PlacesAutocomplete 
+              value={this.state.address}
+              onChange={this.handleChange}
+              onSelect={this.handleSelect}
+              debounce = {500}
+            >
+            {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
+              <div className = "location4">
+                <input className = "location5"
+                  {...getInputProps({
+                    placeholder: 'Enter City and Store',
+                  })}
+                />
+                <div className="location2">
+                  {loading && <div></div>}
+                  {suggestions.map(suggestion => {
+                    const className = suggestion.active
+                      ? 'suggestion-item--active'  
+                      : 'suggestion-item';
+                    // inline style for demonstration purpose
+                    const style = suggestion.active
+                      ? { backgroundColor: '#b8b2a3', cursor: 'pointer' }
+                      : { backgroundColor: '#ffffff', cursor: 'pointer' };
+                    return (
+                      <div className = "location3"
+                        {...getSuggestionItemProps(suggestion, {
+                          className,
+                          style,
+                        })}
+                      >
+                        <span>{    suggestion.description    }</span>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+            </PlacesAutocomplete>
+          </div>
 
-      <div className="busyness">
-        <div className="enterStoreName">
-          <input
-            placeholder="Enter the store name"
-            value={this.state.storeName}
-            onChange={this.onChangeStoreName}
-          />
-        </div>
-        <div className="enterStoreAddress">
-          <input
-            placeholder="Enter the store address"
-            value={this.state.storeAddress}
-            onChange={this.onChangeStoreAddress}
-          />
-        </div>
+          <div className="submitToggle">
+            <ButtonDropdown className = "submitter"
+              isOpen={this.state.dropdownOpen}
+              toggle={this.toggle}
+            >
+              <DropdownToggle>{this.state.busyness}</DropdownToggle>
+              <DropdownMenu>
+                <DropdownItem onClick={this.select}>Not busy</DropdownItem>
+                <DropdownItem onClick={this.select}>Somewhat busy</DropdownItem>
+                <DropdownItem onClick={this.select}>Moderately busy</DropdownItem>
+                <DropdownItem onClick={this.select}>Busy</DropdownItem>
+                <DropdownItem onClick={this.select}>Very busy</DropdownItem>
+                <DropdownItem onClick={this.select}>Extremely busy</DropdownItem>
+              </DropdownMenu>
+            </ButtonDropdown>
+          </div>
+ 
+        
+          <div className="button2">
+            <button className = "actualButton" onClick={(e) => this.onSubmit(e)}> Submit! </button>
+          </div>
+        
 
-        <div className="submitToggle">
-          <ButtonDropdown
-            isOpen={this.state.dropdownOpen}
-            toggle={this.toggle}
-          >
-          <DropdownToggle>{this.state.busyness}</DropdownToggle>
-          <DropdownMenu>
-            <DropdownItem onClick={this.select}>
-              Not Busy At All
-            </DropdownItem>
-            <DropdownItem onClick={this.select}>Normal</DropdownItem>
-            <DropdownItem onClick={this.select}>Busy</DropdownItem>
-            <DropdownItem onClick={this.select}>Very Busy</DropdownItem>
-            <DropdownItem onClick={this.select}>
-              Lineup to Get In
-            </DropdownItem>
-          </DropdownMenu>
-        </ButtonDropdown>
-        </div>
-
-        <div className="button2">
-          <button onClick={(e) => this.onSubmit(e)}> Submit! </button>
-        </div>
+      </div>
         <div className="helpingpic">
          <img id = "helping"
             alt=""
@@ -144,7 +179,7 @@ class Submitpage extends React.Component {
             width="1100px"
             height="500px"
           />
-        </div>
+      </div>
 
         <div className = "footer">
             <div className = "bodyleft">
@@ -156,17 +191,7 @@ class Submitpage extends React.Component {
             </div>
         </div>
 
-      </div>
-        
-       /*} <div className = "footerbottom">
-            <div className = "bodyleft">
-              <p className = "footertext1"> Created by Adam Lam, Matthew Jiao, Nicholas Tao</p>
-            </div>
-
-            <div className = "bodyright" >
-              <p className = "footertext2"> &copy; Grocery Store Tracker 2020 </p>
-            </div>
-    </div>*/
+      </div>  
     );
   }
 }

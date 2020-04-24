@@ -129,55 +129,70 @@
 .footertext1{
   color:white;
   float:left;     
-  padding-top:95px;
+  padding-top:95px;            /* footertext on left*/
   padding-left:10px;
 }
 
 .footertext2{
-  color:white;
+  color:white;      /*footer text on right*/
   float:right;
   padding-top:95px;
   padding-right: 10px;
 }
 
 .footerbottom{
-  position:absolute;
+  position:absolute;             /*the whole div*/
   width: 81.2%;
   bottom:0;
 }
 
-.button2{
-  display:inline-block;
-}
-
 .viewing{
-  display:inline-block;
+  display:inline-block;             /*the whole div on viewing page*/
 }
 .inputRadius{
-  display:inline-block;
+  display:inline-block;             /*radius div*/
 }
 .button1{
-  display:inline-block;
+  display:inline-block;          /*submit button*/
 }
 
 /*Submitpage*/
-
-
-.busyness{
+.button2{
   display:inline-block;
+  width:33.3%;
+  text-align:left;
 }
-.enterStoreName{
-  display:inline-block;
-  margin-right: 30px;
+.submitter{
+  color: rgb(29, 42, 156);
 }
-.enterStoreAddress{
-  display: inline-block;
-  margin-right: 30px;
+.actualButton{
+  border: 2px solid rgb(29, 42, 156); 
+  color: rgb(29, 42, 156);
 }
+
 .submitToggle{
   display:inline-block;
-  margin-right: 30px;
+  text-align:center;
+  width:33.3%;
+  top: -20;
+  position:relative;
 }
 #helping{
 padding-top:5px;
 }
+
+.location{
+  display:inline-block;
+  position:relative;
+  width:33.3%;
+  text-align: right;
+}
+.rightside{
+  float:right;
+  width:50%;
+  text-align:center;
+}
+
+.location5{
+  width:50%;
+ }
