@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import "./Components.css";
+import styled from 'styled-components';
 
 class Viewpage extends React.Component {
   constructor(props) {

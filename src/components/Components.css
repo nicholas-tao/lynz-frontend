@@ -157,12 +157,12 @@
 }
 
 /*Submitpage*/
-.button2{
+.button2{                      /*div with the button*/
   display:inline-block;
   width:33.3%;
   text-align:left;
 }
-.submitter{
+.submitter{              /*busyness submit button*/
   color: rgb(29, 42, 156);
 }
 .actualButton{
@@ -170,29 +170,29 @@
   color: rgb(29, 42, 156);
 }
 
-.submitToggle{
+.submitToggle{                /*toggler div*/
   display:inline-block;
   text-align:center;
   width:33.3%;
   top: -20;
   position:relative;
-}
-#helping{
+} 
+#helping{                     /*the pic*/
 padding-top:5px;
 }
 
-.location{
+.location{             /*div with the location textbox*/
   display:inline-block;
   position:relative;
   width:33.3%;
   text-align: right;
 }
-.rightside{
-  float:right;
-  width:50%;
-  text-align:center;
-}
 
-.location5{
+.location5{          /*textbox*/
   width:50%;
  }
+
+ .hover1{
+   text-align:center;
+ }
+ 
