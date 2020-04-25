@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import axios from "axios";
-import styled from 'styled-components';
 import PlacesAutocomplete from 'react-places-autocomplete';
 import {
   ButtonDropdown,
@@ -306,7 +305,7 @@ toggleHoverState6(state) {
             </div>
 
             <div className = "bodyright" >
-              <p className = "footertext2"> &copy; Grocery Store Tracker 2020 </p>
+              <p className = "footertext2"> &copy;  Lynz 2020 </p>
             </div>
         </div>
 

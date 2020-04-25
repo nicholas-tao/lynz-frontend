@@ -4,8 +4,7 @@ import store from "../images/store.jpg";
 import busy from "../images/busy.jpg";
 import corona from "..//images/corona.jpg"
 import { Link } from 'react-router-dom';
-import Viewpage from "./Viewpage.component.js";
-import Submitpage from "./Submitpage.component.js";
+
 //import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from "react-scroll"
 
 
@@ -44,7 +43,7 @@ import Submitpage from "./Submitpage.component.js";
         <div className = "third">
           <div className = "thirdbodyleft" >
             <h2 className = "workstext"> How it works</h2>
-            <p className = "longtext1"> <br></br><br></br>Grocery Store Tracker is an intuitive tool that helps you to shop more effectively. It works by collecting 
+            <p className = "longtext1"> <br></br><br></br>Lynz is an intuitive tool that helps you to shop more effectively. It works by collecting 
               the busyness of stores from real-live people. This is then displayed to you, so that you can make an
               informative decision about when to go to the store. After you have visited the store, you can 
               <Link to="/submit" className = "link2"> <u>submit</u></Link>  updates about
@@ -55,9 +54,9 @@ import Submitpage from "./Submitpage.component.js";
           <div className = "thirdbodyright">
          
             <h2 className = "coronatext"> How we are helping the COVID-19 Pandemic</h2>
-            <p className = "longtext2"> <br></br>Grocery Store Tracker is not only meant for the convenience of shoppers.
-              Grocery Store Tracker was made to help stop the COVID-19 Pandemic, by informing the public of the optimal times to
-              visit the store. This would decrease crowds and community spread. Grocery Store Tracker helps people to social distance 
+            <p className = "longtext2"> <br></br>Lynz is not only meant for the convenience of shoppers.
+            Lynz was made to help stop the COVID-19 Pandemic, by informing the public of the optimal times to
+              visit the store. This would decrease crowds and community spread. Lynz helps people to social distance 
               as much as possible, so we can all be happy and healthy. 
             </p>
             <img id = "coronapic2"
@@ -79,7 +78,7 @@ import Submitpage from "./Submitpage.component.js";
             </div>
 
             <div className = "bodyright" >
-              <p className = "footertext2"> &copy; Grocery Store Tracker 2020 </p>
+              <p className = "footertext2"> &copy;  Lynz 2020 </p>
             </div>
         </div>
       </div>

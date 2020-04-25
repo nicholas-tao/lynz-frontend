@@ -1,8 +1,8 @@
 import React from "react";
 import axios from "axios";
 import "./Components.css";
-import styled from 'styled-components';
-import test from "./test.json"
+import test from "./test.json";
+var classNames = require('classnames');
 
 class Viewpage extends React.Component {
   constructor(props) {
@@ -11,14 +11,14 @@ class Viewpage extends React.Component {
     this.onSubmit = this.onSubmit.bind(this);
     this.changeStoredata = this.changeStoredata.bind(this);
     this.makeGrid = this.makeGrid.bind(this);
-    this.colorChange = this.colorChange.bind(this);
 
     this.state = {
       latitude: "",
       longitude: "",
       radius: "",
       storedata: "",
-      received: false
+      received: false,
+      textClass: this.computeClass(0)
     };
   }
   makeGrid(test){
@@ -85,65 +85,66 @@ class Viewpage extends React.Component {
 
   renderMatches(data) {
     
-    if(this.state.received == true){
+    if(this.state.received === true){
     return data.map(data => {
-      return (
-          <div class="col-lg-4">
-              <div className="one">
-                  <p className="Store"><h3> {data.name}</h3></p>
-                  {this.colorChange(data)}
-                  <p className= "Address">{data.address}</p>
       
+      return (
+          <div className="col-lg-4">
+              <div className="one">
+                <div className = "Store">
+                  <h3> {data.name}</h3>
+                </div>
+
+                  {this.computeClass(data.busyness)}
+                  
+                <div className = "Address">
+                  <p><i>{data.address}</i></p>
+                </div>
               </div>
           </div>
       );
   })
 }
-}
-colorChange(e){
-
- var temp = ""
-  if(e === "Not Busy"){
-    temp = "color:green"
-  }
-  else if(e === "Somewhat Busy"){
-    temp = "color:#b0e600"
-  }
-  else if(e === "Moderately Busy"){
-    temp = "color:yellow"
-  }
-  else if(e === "Busy"){
-    temp = "color:orange"
-  }
-  else if(e === "Very Busy"){
-    temp = "color:red"
-  }
-  else if(e === "Extremely Busy"){
-    temp = "color:#960606"
-  }
+else{
   return(
-  <div className = "Busyness">
-        <p >
-          <h4>{e.busyness}</h4>
-        </p>
-  </div>
+    <div className = "greeting"> Hi! Enter a radius to see stores near you!</div>
   )
+}
+}
+
+computeClass(e){
+  var btnClass = classNames({
+  
+ 
+    "green": e == "Not Busy",
+    "green-yellow": e == "Somewhat Busy",
+    "yellow": e == "Moderately Busy",
+    "orange": e == "Busy",
+    "red": e == "Very Busy",
+    "brown": e == "Extremely Busy"
+  }
+);
+  return (
+    <div className = {btnClass} >
+      <b>{e}</b>
+    </div>
+  );
 }
 
 
   render() {
     //think i need code here 
-    let greet= "?"
+    // let greet= "?"
    
-    let listNames = "";
-    let listAddr = "";
-    let listBusy = "";
-    let number = "";
-    let table = "";
-    let gooddata = [];
+    // let listNames = "";
+    // let listAddr = "";
+    // let listBusy = "";
+    // let number = "";
+    // let table = "";
+    // let gooddata = [];
     let data = ""
-    if(this.state.received == true){
-    greet = "hihi";
+    if(this.state.received === true){
+    // greet = "hihi";
     // listNames = data.map((d) => <li key={d.name}>{d.name}</li>);
     // listAddr = data.map((d) => <li key={d.address}>{d.address}</li>);
     // listBusy = data.map((d) => <li key={d.busyness}>{d.busyness}</li>); useless for now
@@ -161,7 +162,7 @@ colorChange(e){
         <div className = "content-wrap">
         <div className="viewing">
             <input id = "radius"
-              placeholder="Enter the Radius"
+              placeholder="Enter the Radius (km)"
               value={this.state.radius}
               onChange={this.onChangeRadius}
             />
@@ -188,7 +189,7 @@ colorChange(e){
           </div>
 
           <div className="bodyright">
-            <p className="footertext2"> &copy; Grocery Store Tracker 2020 </p>
+            <p className="footertext2"> &copy;  Lynz 2020 </p>
           </div>
         </div>
       </div>

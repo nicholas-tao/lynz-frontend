@@ -1,12 +1,16 @@
 /*nav bar*/
 #navbar-brand {
-  font-size: 27px;
-  font-weight: bold;
-  font-family: Arial, Helvetica, sans-serif
+  font-size: 40px;
+  font-family: "Acme", Helvetica, sans-serif
 }
 
 .nav{
   background-color: #f2f3f7
+}
+
+#logo{
+  position:relative;
+  top:10px;
 }
 
 /*Homepage*/
@@ -126,18 +130,67 @@
 
 
 /*viewpage*/
-.green{color: green}
-.yellow{color:yellow}
-.b0e600{color:#b0e600}
-.orange{color:orange}
-.red{color:red}
-.a960606{color: 960606}
+.col-lg-4{
+  padding-top:10px;
+  border-radius: 3%;
+ }
+.one {
+  width: 350px;
+  height: 220px;
+  background: white;
+  border-radius: 3%;
+  color: white;
+  box-shadow: 5px 5px rgba(0,0,0,.15);
+  transition: all .4s ease;
+}
+.one:hover {
+  border-radius: 0% 0% 10% 10% / 0% 0% 3% 3% ;
+  box-shadow: 5px 5px rgba(0,0,0,.35);
+}
+.green{
+  color: green;
+  font-size: 22px;
+}
+.yellow{
+  color:yellow;
+  font-size: 22px;
+}
+.green-yellow{
+  color:#b0e600;
+  font-size: 22px;
+}
+.orange{
+  color:orange;
+  font-size: 22px;
+}
+.red{
+  color:red;
+  font-size: 22px;
+}
+.brown{
+  color: #960606;
+  font-size: 22px;
+}
 
-
-
+.Store{
+  font-family: Arial, Helvetica, sans-serif;
+      color:black;
+  font-size: 29px;
+}
+.Address{
+  color:black;
+  padding-top:20px;
+  padding-bottom:20px;
+}
+.greeting{
+  position:relative;
+  top:180px;
+  left: 310px;
+  font-size:30px;
+}
 .one{          /*each box with store/address/busyness*/
-  text-align: center;
-  padding:20px;
+  text-align: left;
+  padding:30px;
 }
 .all{
   position: relative;

@@ -23,7 +23,7 @@ class NavbarComp extends Component{
             height="39px"
             className="d-inline-block align-top"
            />{' '}
-           Grocery Store Tracker
+            Lynz
          </NavbarBrand>
             <Nav className="mr-auto">
               <NavItem>
