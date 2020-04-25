@@ -219,7 +219,7 @@ toggleHoverState6(state) {
                   onClick={(e) => { this.select(e); this.handleMouseHover1();}}
                   onMouseEnter={this.handleMouseHover1}
                   onMouseLeave={this.handleMouseHover1}
-                  > Not busy </div>
+                  > Not Busy </div>
                 </DropdownItem>  {this.state.isHovering1 &&
                       <div className = "hover1">
                         <u><i>(No lineup to get in, short checkout lines)</i></u>     
@@ -230,7 +230,7 @@ toggleHoverState6(state) {
                   onClick={(e) => { this.select(e); this.handleMouseHover2();}}
                   onMouseEnter={this.handleMouseHover2}
                   onMouseLeave={this.handleMouseHover2}
-                  > Somewhat busy </div>
+                  > Somewhat Busy </div>
                 </DropdownItem>  {this.state.isHovering2 &&
                       <div className = "hover1">
                         <u><i>(No lineup to get in, moderate checkout lines)</i></u>     
@@ -241,7 +241,7 @@ toggleHoverState6(state) {
                   onClick={(e) => { this.select(e); this.handleMouseHover3();}}
                   onMouseEnter={this.handleMouseHover3}
                   onMouseLeave={this.handleMouseHover3}
-                  > Moderately busy </div>
+                  > Moderately Busy </div>
                 </DropdownItem>  {this.state.isHovering3 &&
                       <div className = "hover1">
                         <u><i>(No lineup to get in, long checkout lines)</i></u>     
@@ -263,7 +263,7 @@ toggleHoverState6(state) {
                   onClick={(e) => { this.select(e); this.handleMouseHover5();}}
                   onMouseEnter={this.handleMouseHover5}
                   onMouseLeave={this.handleMouseHover5}
-                  > Very busy </div>
+                  > Very Busy </div>
                 </DropdownItem>  {this.state.isHovering5 &&
                       <div className = "hover1">
                         <u><i>(Long lineup to get in, less than 30 min)</i></u>     
@@ -274,7 +274,7 @@ toggleHoverState6(state) {
                   onClick={(e) => { this.select(e); this.handleMouseHover6();}}
                   onMouseEnter={this.handleMouseHover6}
                   onMouseLeave={this.handleMouseHover6}
-                  > Extremely busy </div>
+                  > Extremely Busy </div>
                 </DropdownItem>  {this.state.isHovering6 &&
                       <div className = "hover1">
                         <u><i>(Very long lineup to get in, more than 30 min)</i></u>     

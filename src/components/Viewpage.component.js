@@ -84,6 +84,7 @@ class Viewpage extends React.Component {
   }
 
   renderMatches(data) {
+    if(this.state.received == true){
     return data.map(data => {
       return (
           <div class="col-lg-4">
@@ -97,24 +98,28 @@ class Viewpage extends React.Component {
       );
   })
 }
+}
 
 
   render() {
     //think i need code here 
     let greet= "?"
-    let data = test.data;    //setting a variable (data) to the json.data 
+   
     let listNames = "";
     let listAddr = "";
     let listBusy = "";
     let number = "";
     let table = "";
     let gooddata = [];
+    let data = ""
     if(this.state.received == true){
     greet = "hihi";
-    listNames = data.map((d) => <li key={d.name}>{d.name}</li>);
-    listAddr = data.map((d) => <li key={d.address}>{d.address}</li>);
-    listBusy = data.map((d) => <li key={d.busyness}>{d.busyness}</li>);
-    number = listNames.length;
+    // listNames = data.map((d) => <li key={d.name}>{d.name}</li>);
+    // listAddr = data.map((d) => <li key={d.address}>{d.address}</li>);
+    // listBusy = data.map((d) => <li key={d.busyness}>{d.busyness}</li>); useless for now
+    // number = listNames.length;
+
+    data = test.data;    //setting a variable (data) to the json.data 
     //table = this.Table(listNames, listAddr, listBusy, number);
     // for(let i = 0; i < number; i++){
     //   gooddata[i] = listNames[i]+" "+ listAddr[i]+" "+ listBusy[i];
