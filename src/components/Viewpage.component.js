@@ -68,14 +68,15 @@ class Viewpage extends React.Component {
    /* axios
       .get("http://localhost:5000/busyness/getstores")
       .then((response) => {
-        this.setState({ storedata: response.data });
+        this.setState({ storedata: response.data }); //for nick the line assignment thats needed is at 153
+        //see if you can store the object (not object.data) into somewhere then go to line 154
         console.log(response.data);
       })
       .catch((error) => {
         console.log(error);
       });*/
     //pass the file into here as test
-      this.makeGrid(test);
+      this.makeGrid(test); // im not sure if this method really does anything 
 
     console.log(this.state);
     this.setState({
