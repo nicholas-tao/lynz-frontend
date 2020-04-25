@@ -10,23 +10,28 @@ class Viewpage extends React.Component {
     this.onChangeRadius = this.onChangeRadius.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
     this.changeStoredata = this.changeStoredata.bind(this);
+    this.makeGrid = this.makeGrid.bind(this);
+  
 
     this.state = {
       latitude: "",
       longitude: "",
       radius: "",
-      storedata: "hi",
-      received: true
+      storedata: "",
+      received: false
     };
   }
-
-  changeStoredata(e){
-    console.log(e);
-    this.setState({
-      storedata: e.data
-    })
+  makeGrid(test){
+    this.changeStoredata(test);
+    console.log("hi");
   }
 
+  changeStoredata(test){
+    this.setState({
+      storedata: test.data,
+      received: true
+    });
+  }
 
   onChangeRadius(e) {
     this.setState({
@@ -69,20 +74,53 @@ class Viewpage extends React.Component {
       .catch((error) => {
         console.log(error);
       });*/
-    
+    //pass the file into here as test
+      this.makeGrid(test);
 
     console.log(this.state);
-
-
     this.setState({
       radius: "",
     });
   }
 
+  renderMatches(data) {
+    return data.map(data => {
+      return (
+          <div class="col-lg-4">
+              <div id="one">
+                  <p className="Store"><h3> {data.name}</h3></p>
+                  <p><h4>{data.busyness}</h4></p>
+                  <p>{data.address}</p>
+      
+              </div>
+          </div>
+      );
+  })
+}
+
+
   render() {
     //think i need code here 
-    //if received
-    
+    let greet= "?"
+    let data = test.data;    //setting a variable (data) to the json.data 
+    let listNames = "";
+    let listAddr = "";
+    let listBusy = "";
+    let number = "";
+    let table = "";
+    let gooddata = [];
+    if(this.state.received == true){
+    greet = "hihi";
+    listNames = data.map((d) => <li key={d.name}>{d.name}</li>);
+    listAddr = data.map((d) => <li key={d.address}>{d.address}</li>);
+    listBusy = data.map((d) => <li key={d.busyness}>{d.busyness}</li>);
+    number = listNames.length;
+    //table = this.Table(listNames, listAddr, listBusy, number);
+    // for(let i = 0; i < number; i++){
+    //   gooddata[i] = listNames[i]+" "+ listAddr[i]+" "+ listBusy[i];
+    // }
+
+  }
     return (
       <div className="all">
         <div className="viewing">
@@ -91,17 +129,19 @@ class Viewpage extends React.Component {
               value={this.state.radius}
               onChange={this.onChangeRadius}
             />
-            <button className = "actualButton1" onClick={(e) => {this.onSubmit(e);  this.changeStoredata(test);}}> Get Stores! </button>
+            <button 
+              className = "actualButton1" 
+              onClick={(e) => { this.onSubmit(e) }}> 
+              Get Stores! 
+            </button>
         </div>
 
 
-        <div className="grid">
-          <p>heres where the stuff actually goes LOL</p>
-          <p> 
+        <div className = "row">
+          {this.renderMatches(data)}
             
-          </p>
-        </div>
-
+       </div>
+  
         <div className="footerbottom">
           <div className="bodyleft">
             <p className="footertext1">

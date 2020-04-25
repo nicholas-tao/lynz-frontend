@@ -109,18 +109,18 @@ toggleHoverState6(state) {
 }
 
 //get location
-  componentDidMount() {
-    navigator.geolocation.getCurrentPosition(
-      function (position) {
-        // console.log("Latitude is :", position.coords.latitude);
-        // console.log("Longitude is :", position.coords.longitude);
-        this.setState({
-          latitude: position.coords.latitude,
-          longitude: position.coords.longitude
-        });
-      }.bind(this)
-    );
-  }
+  // componentDidMount() {
+  //   navigator.geolocation.getCurrentPosition(
+  //     function (position) {
+  //       // console.log("Latitude is :", position.coords.latitude);
+  //       // console.log("Longitude is :", position.coords.longitude);
+  //       this.setState({
+  //         latitude: position.coords.latitude,
+  //         longitude: position.coords.longitude
+  //       });
+  //     }.bind(this)
+  //   );
+  // }
 
  
   toggle() {
@@ -144,8 +144,8 @@ toggleHoverState6(state) {
     const busyness = {
       address: this.state.address,
       busyness: this.state.busyness,
-      latitude: this.state.latitude,
-      longitude: this.state.longitude
+     // latitude: this.state.latitude,
+    //  longitude: this.state.longitude
     };
 
     console.log(busyness)

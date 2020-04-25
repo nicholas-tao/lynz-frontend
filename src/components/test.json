@@ -1,8 +1,10 @@
 {
 	"data":[
 
-{"name": "Walmart", "address": "123 Sesame Street, Richmond Hill", "busyness": "busy"},
-{"name": "Walmart2", "address": "2123 Sesame Street, Richmond Hill", "busyness": "busy"}
+{"name": "Walmart", "address": "123 Sesame Street, Richmond Hill", "busyness": " not busy"},
+{"name": "Walmart2", "address": "2123 Sesame Street, Richmond Hill", "busyness": "very busy"},
+{"name": "Walmart3", "address": "3123 Sesame Street, Richmond Hill", "busyness": "moderate busy"},
+{"name": "Walmart4", "address": "4123 Sesame Street, Richmond Hill", "busyness": "extremely busy"}
 	]
 	
 }
