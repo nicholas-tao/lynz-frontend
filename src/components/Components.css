@@ -126,6 +126,28 @@
 
 
 /*viewpage*/
+.green{color: green}
+.yellow{color:yellow}
+.b0e600{color:#b0e600}
+.orange{color:orange}
+.red{color:red}
+.a960606{color: 960606}
+
+
+
+.one{          /*each box with store/address/busyness*/
+  text-align: center;
+  padding:20px;
+}
+.all{
+  position: relative;
+  min-height: 100vh;
+}
+
+.content-wrap{
+  padding-bottom: 120px;
+}
+
 .footertext1{
   color:white;
   float:left;     
@@ -142,8 +164,9 @@
 
 .footerbottom{
   position:absolute;             /*the whole div*/
-  width: 81.2%;
+  width: 100%;
   bottom:0;
+  height: 120px;
 }
 
 .viewing{
@@ -153,7 +176,7 @@
 .actualButton1{
   border: 2px solid rgb(29, 42, 156); 
   color: rgb(29, 42, 156);
-  
+
 }
 #radius{
   margin-right:30px;

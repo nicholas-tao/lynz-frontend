@@ -11,7 +11,7 @@ class Viewpage extends React.Component {
     this.onSubmit = this.onSubmit.bind(this);
     this.changeStoredata = this.changeStoredata.bind(this);
     this.makeGrid = this.makeGrid.bind(this);
-  
+    this.colorChange = this.colorChange.bind(this);
 
     this.state = {
       latitude: "",
@@ -84,20 +84,50 @@ class Viewpage extends React.Component {
   }
 
   renderMatches(data) {
+    
     if(this.state.received == true){
     return data.map(data => {
       return (
           <div class="col-lg-4">
-              <div id="one">
+              <div className="one">
                   <p className="Store"><h3> {data.name}</h3></p>
-                  <p><h4>{data.busyness}</h4></p>
-                  <p>{data.address}</p>
+                  {this.colorChange(data)}
+                  <p className= "Address">{data.address}</p>
       
               </div>
           </div>
       );
   })
 }
+}
+colorChange(e){
+
+ var temp = ""
+  if(e === "Not Busy"){
+    temp = "color:green"
+  }
+  else if(e === "Somewhat Busy"){
+    temp = "color:#b0e600"
+  }
+  else if(e === "Moderately Busy"){
+    temp = "color:yellow"
+  }
+  else if(e === "Busy"){
+    temp = "color:orange"
+  }
+  else if(e === "Very Busy"){
+    temp = "color:red"
+  }
+  else if(e === "Extremely Busy"){
+    temp = "color:#960606"
+  }
+  return(
+  <div className = "Busyness">
+        <p >
+          <h4>{e.busyness}</h4>
+        </p>
+  </div>
+  )
 }
 
 
@@ -128,6 +158,7 @@ class Viewpage extends React.Component {
   }
     return (
       <div className="all">
+        <div className = "content-wrap">
         <div className="viewing">
             <input id = "radius"
               placeholder="Enter the Radius"
@@ -146,7 +177,8 @@ class Viewpage extends React.Component {
           {this.renderMatches(data)}
             
        </div>
-  
+       </div>
+
         <div className="footerbottom">
           <div className="bodyleft">
             <p className="footertext1">
