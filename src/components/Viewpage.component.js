@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import "./Components.css";
-//import test from "./test.json";        @NICK CHANGE HERE
+//import test from "./test.json"; //@NICK CHANGE HERE
 import test from "./test2.json";
 //var test = [];
 var classNames = require("classnames");
@@ -55,7 +55,7 @@ class Viewpage extends React.Component {
   }
 
   onSubmit(e) {
-   // test = [];
+    // test = [];
     e.preventDefault();
 
     const coordsAndRadius = {
@@ -64,7 +64,7 @@ class Viewpage extends React.Component {
       radius: this.state.radius,
     };
 
- /*   axios
+    /*   axios
       .post("http://localhost:5000/busyness/view", coordsAndRadius)
       .then((res) => console.log(res.data));
 
@@ -135,11 +135,8 @@ class Viewpage extends React.Component {
   }
 
   render() {
-  
     let data = "";
     if (this.state.received === true) {
-
-
       data = test.data; //setting a variable (data) to the json.data
 
       // }
