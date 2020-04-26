@@ -1,68 +1,30 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Lynz
+**Outsmarting lines, together**
+[Devpost](https://devpost.com/software/lynz)
 
-## Available Scripts
+## Inspiration
+To flatten the COVID-19 curve, we're all doing our best to minimize social interactions. If possible, we've even barricaded ourselves moat and drawbridge at home hoping to wait this storm out. Even so, there is one necessity that nobody can wait out forever: grocery shopping.
 
-In the project directory, you can run:
+Trying to socially distance and shop at the same time… Lengthy checkout lines and crowded supermarkets... Having to run a 3 hour errand at Walmart just for weekly groceries...
 
-### `npm start`
+These challenges paired with the current global situation have led us to develop Lynz, an easy to use webapp that allows people to find out how busy any particular supermarket is based on live data provided by other shoppers. The hope is that by spreading accurate and actionable information, we can shop smarter and safer.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## What it does
+Users can view the busyness levels of nearby grocery stores. The busyness level is calculated using data from other users who reported the busyness level of the given store when they visited it. By providing this data to users, they can make informed decisions of when and where to go grocery shopping.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## How we built it
+This project was built using the MERN stack. On the front end, the React library was essential to design the UI and UX. When called upon, location data taken directly from Google Maps API enables Lynz to figure out a user’s current location and display all supermarkets within a given radius. The backend is built with Node.js and Express. The backend server sends busyness information from a MongoDB database to the user and also relays busyness reports from the user to store in the database.
 
-### `npm test`
+To ensure that the busyness shown to users is accurate, we used a regression model based on exponentially moving averages. This means that database entries are depreciated based on the time elapsed, giving exponentially greater weights to more recent busyness entries. Our algorithm is geared to work in real-life situations based on the assumption of mass scale. This means that sufficient data is required before an accurate busyness is displayed to users.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Challenges we ran into
+Working with new technologies including MongoDB, Express, React, Node.js, and integrating them together has been challenging. Being stuck at our homes, it has also been difficult coordinating with one another effectively. We also had difficulty deploying our webapp.
 
-### `npm run build`
+## Accomplishments that we're proud of
+Prior to Silicon Valley Hacks, our team had no experience working with the MERN stack. We did, however, decide that if we were to build something together, it would promote change through connecting communities in the midst of the global pandemic. Bouncing off one anothers' prior skills, strengths, and interests, we learned the MERN stack to build Lynz. Each one of us can resolutely say that "yes, this was a challenging experience and it has also been worth the while".
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## What we learned
+We learned all about the MERN stack and how to effectively collaborate with each other despite being in our own homes.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## What's next for Lynz
+Moving past our hackathon project, we plan to spread awareness and engage people around local communities to use Lynz. With more users, the busyness level data will more more accurate and benefit everyone. We would also work on steps to build a mobile version of our platform to enable users to receive notifications on selected stores and streamline both convenience and accessibility.
