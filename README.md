@@ -2,6 +2,7 @@
 **Outsmarting lines, together**
 
 [Visit Devpost Page](https://devpost.com/software/lynz)
+
 [Demo Video](https://youtu.be/DzKA0FkMRdE)
 
 ## Inspiration
