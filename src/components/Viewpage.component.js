@@ -98,7 +98,7 @@ class Viewpage extends React.Component {
                 <h3> {data.name}</h3>
               </div>
 
-              {this.computeClass(data.busyness)}
+              {this.computeClass(data)}
 
               <div className="Address">
                 <p>
@@ -117,6 +117,7 @@ class Viewpage extends React.Component {
   }
 
   computeClass(e) {
+    e = "Insufficient Data";
     var btnClass = classNames({
       green: e == "Not Busy",
       "green-yellow": e == "Somewhat Busy",
@@ -134,27 +135,13 @@ class Viewpage extends React.Component {
   }
 
   render() {
-    //think i need code here
-    // let greet= "?"
-
-    // let listNames = "";
-    // let listAddr = "";
-    // let listBusy = "";
-    // let number = "";
-    // let table = "";
-    // let gooddata = [];
+  
     let data = "";
     if (this.state.received === true) {
-      // greet = "hihi";
-      // listNames = data.map((d) => <li key={d.name}>{d.name}</li>);
-      // listAddr = data.map((d) => <li key={d.address}>{d.address}</li>);
-      // listBusy = data.map((d) => <li key={d.busyness}>{d.busyness}</li>); useless for now
-      // number = listNames.length;
+
 
       data = test; //setting a variable (data) to the json.data
-      //table = this.Table(listNames, listAddr, listBusy, number);
-      // for(let i = 0; i < number; i++){
-      //   gooddata[i] = listNames[i]+" "+ listAddr[i]+" "+ listBusy[i];
+
       // }
     }
     return (
