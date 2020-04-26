@@ -1,7 +1,6 @@
 # Lynz
 **Outsmarting lines, together**
 
-### Devpost
 [Visit Devpost Page](https://devpost.com/software/lynz)
 
 ## Inspiration
