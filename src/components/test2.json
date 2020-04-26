@@ -1,0 +1,104 @@
+{
+    "data":[
+    {
+      "name": "Trader Joe's",
+      "address": "720 Menlo Avenue, Menlo Park",
+      "busyness": "Insufficient Data"
+    },
+    {
+      "name": "Whole Foods Market",
+      "address": "774 Emerson Street, Palo Alto",
+      "busyness": "Insufficient Data"
+    },
+    {
+      "name": "Trader Joe's",
+      "address": "855 El Camino Real, Palo Alto",
+      "busyness": "Insufficient Data"
+    },
+    {
+      "name": "The Willows Market",
+      "address": "60 Middlefield Road, Menlo Park",
+      "busyness": "Insufficient Data"
+    },
+    {
+      "name": "Draeger's Market",
+      "address": "1010 University Drive, Menlo Park",
+      "busyness": "Insufficient Data"
+    },
+    {
+      "name": "Cardenas Markets",
+      "address": "1731 East Bayshore Road, East Palo Alto",
+      "busyness": "Insufficient Data"
+    },
+    {
+      "name": "Mollie Stone's Markets",
+      "address": "164 California Avenue, Palo Alto",
+      "busyness": "Insufficient Data"
+    },
+    {
+      "name": "Delucchi's Market",
+      "address": "3640 Florence Street, Redwood City",
+      "busyness": "Insufficient Data"
+    },
+    {
+      "name": "THE MARKET at Edgewood",
+      "address": "2170 West Bayshore Road, Palo Alto",
+      "busyness": "Insufficient Data"
+    },
+    {
+      "name": "El Rancho Market",
+      "address": "812 Willow Road, Menlo Park",
+      "busyness": "Insufficient Data"
+    },
+    {
+      "name": "La Estrellita Market & Deli",
+      "address": "2387 University Avenue, Palo Alto",
+      "busyness": "Insufficient Data"
+    },
+    {
+      "name": "Soleska Market",
+      "address": "1305 Willow Road, Menlo Park",
+      "busyness": "Insufficient Data"
+    },
+    {
+      "name": "La Hacienda Market",
+      "address": "1933 Menalto Avenue, Menlo Park",
+      "busyness": "Insufficient Data"
+    },
+    {
+      "name": "Pal Market",
+      "address": "2398 University Avenue, East Palo Alto",
+      "busyness": "Insufficient Data"
+    },
+    {
+      "name": "Oakwood Market",
+      "address": "2106 Oakwood Drive, East Palo Alto",
+      "busyness": "Insufficient Data"
+    },
+    {
+      "name": "Khoury's Market Palo Alto",
+      "address": "501 Oxford Avenue, Palo Alto",
+      "busyness": "Insufficient Data"
+    },
+    {
+      "name": "Terraba",
+      "address": "1601 Willow Road, Menlo Park",
+      "busyness": "Insufficient Data"
+    },
+    {
+      "name": "Chavez Supermarket",
+      "address": "46 Fifth Avenue, Redwood City",
+      "busyness": "Insufficient Data"
+    },
+    {
+      "name": "Chavez Supermarket",
+      "address": "3282 Middlefield Road, Menlo Park",
+      "busyness": "Insufficient Data"
+    },
+    {
+      "name": "Euromart",
+      "address": "3707 El Camino Real, Palo Alto",
+      "busyness": "Insufficient Data"
+    }
+  ]
+}

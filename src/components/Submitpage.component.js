@@ -30,6 +30,7 @@ class Submitpage extends React.Component {
       latitude: "",
       longitude: "",
       address: "",
+      received: false,
       isHovering1: false,
       isHovering2: false,
       isHovering3: false, //for each of the buttons LOL
@@ -132,6 +133,9 @@ class Submitpage extends React.Component {
   }
 
   onSubmit(e) {
+    this.setState({
+      received:true
+    })
     e.preventDefault(); //idk what this does; maybe prevents empty fields from being sent
 
     const busynessToSend = {
@@ -141,9 +145,9 @@ class Submitpage extends React.Component {
       //  longitude: this.state.longitude
     };
 
-    axios
-      .post("http://localhost:5000/busyness/add", busynessToSend)
-      .then((res) => console.log(res.data));
+    // axios
+    //   .post("http://localhost:5000/busyness/add", busynessToSend)
+    //   .then((res) => console.log(res.data));
 
     this.setState({
       busyness: "Select Busyness",
@@ -152,6 +156,11 @@ class Submitpage extends React.Component {
   }
 
   render() {
+    let thanks = ""
+    if (this.state.received == true){
+      console.log("HIII");
+      thanks = "Thank you for submitting"
+    }
     return (
       <div className="allsubmit">
         <div className="busyness">
@@ -340,6 +349,7 @@ class Submitpage extends React.Component {
               {" "}
               Submit!{" "}
             </button>
+            <p className = "actualText"> &nbsp; &nbsp; {thanks} </p>
           </div>
         </div>
         <div className="helpingpic">
@@ -348,7 +358,7 @@ class Submitpage extends React.Component {
             alt=""
             src={helping}
             width="1100px"
-            height="500px"
+            height="490px"
           />
         </div>
 

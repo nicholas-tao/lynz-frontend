@@ -258,7 +258,12 @@
 }
 .actualButton2 {
   border: 2px solid rgb(29, 42, 156);
+  display: inline-block;
   color: rgb(29, 42, 156);
+}
+
+.actualText {
+  display:inline-block;
 }
 
 .submitToggle {

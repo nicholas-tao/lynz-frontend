@@ -1,8 +1,9 @@
 import React from "react";
 import axios from "axios";
 import "./Components.css";
-//import test from "./test.json";
-var test = [];
+//import test from "./test.json";        @NICK CHANGE HERE
+import test from "./test2.json";
+//var test = [];
 var classNames = require("classnames");
 
 class Viewpage extends React.Component {
@@ -54,7 +55,7 @@ class Viewpage extends React.Component {
   }
 
   onSubmit(e) {
-    test = [];
+   // test = [];
     e.preventDefault();
 
     const coordsAndRadius = {
@@ -63,7 +64,7 @@ class Viewpage extends React.Component {
       radius: this.state.radius,
     };
 
-    axios
+ /*   axios
       .post("http://localhost:5000/busyness/view", coordsAndRadius)
       .then((res) => console.log(res.data));
 
@@ -77,7 +78,7 @@ class Viewpage extends React.Component {
       })
       .catch((error) => {
         console.log(error);
-      });
+      });*/
     //pass the file into here as test
     this.makeGrid(test); // im not sure if this method really does anything
 
@@ -98,7 +99,7 @@ class Viewpage extends React.Component {
                 <h3> {data.name}</h3>
               </div>
 
-              {this.computeClass(data)}
+              {this.computeClass(data.busyness)}
 
               <div className="Address">
                 <p>
@@ -117,7 +118,6 @@ class Viewpage extends React.Component {
   }
 
   computeClass(e) {
-    e = "Insufficient Data";
     var btnClass = classNames({
       green: e == "Not Busy",
       "green-yellow": e == "Somewhat Busy",
@@ -140,7 +140,7 @@ class Viewpage extends React.Component {
     if (this.state.received === true) {
 
 
-      data = test; //setting a variable (data) to the json.data
+      data = test.data; //setting a variable (data) to the json.data
 
       // }
     }
@@ -150,7 +150,7 @@ class Viewpage extends React.Component {
           <div className="viewing">
             <input
               id="radius"
-              placeholder="Enter the Radius (m)"
+              placeholder="Enter the Radius (meters)"
               value={this.state.radius}
               onChange={this.onChangeRadius}
             />
