@@ -1,26 +1,25 @@
 /*nav bar*/
 #navbar-brand {
   font-size: 42px;
-  font-family: "New Courier", Helvetica, sans-serif
+  font-family: "New Courier", Helvetica, sans-serif;
 }
 
-.nav{
-  background-color: #f2f3f7
+.nav {
+  background-color: #f2f3f7;
 }
-.navbartext{
+.navbartext {
   font-size: 17px;
 }
 
-#logo{
-  position:relative;
-  top:10px;
+#logo {
+  position: relative;
+  top: 10px;
 }
 
 /*Homepage*/
 
-
-#coronapic2{
-  padding:5px;
+#coronapic2 {
+  padding: 5px;
 }
 
 .text-left {
@@ -39,245 +38,254 @@
 }
 
 .text-right {
-  width: 50%;                                 /*text on the right a bit further down*/
+  width: 50%; /*text on the right a bit further down*/
   float: right;
   padding-top: 250px;
   padding-bottom: 250px;
   text-align: center;
-  color: #102c59
+  color: #102c59;
 }
 
 .pic-left {
   margin-top: 50px;
-  margin-bottom:52px;            /* costco pic*/
+  margin-bottom: 52px; /* costco pic*/
   height: 550px;
   width: 50%;
   float: left;
 }
 
 .all {
-  width: 100%;     /* the whole div*/
+  width: 100%; /* the whole div*/
 }
 
-.form{
-  text-align:center;   /*the form on the submit page*/
-  padding-top:300px;
+.form {
+  text-align: center; /*the form on the submit page*/
+  padding-top: 300px;
 }
 
-.workstext{
+.workstext {
   color: #ffffff;
 }
 
-.coronatext{
+.coronatext {
   color: #ffffff;
 }
 
-.longtext1{
-  color: #ffffff;   /* long text on the left (how it works*/
-  font-size: 20px
+.longtext1 {
+  color: #ffffff; /* long text on the left (how it works*/
+  font-size: 20px;
 }
 
-.longtext2{
-  color: #ffffff;     /*long text on the right (corona)*/
-  font-size: 20px
+.longtext2 {
+  color: #ffffff; /*long text on the right (corona)*/
+  font-size: 20px;
 }
 
-.link2{
-  color:rgb(29, 17, 85);    /*color of the link*/
+.link2 {
+  color: rgb(29, 17, 85); /*color of the link*/
 }
 
-.third{
-  width:100%;                     /*third big div*/
+.third {
+  width: 100%; /*third big div*/
   padding-bottom: 20px;
 }
 
-.thirdbodyleft{
+.thirdbodyleft {
   width: 49%;
-  float:left;             /* third body stuff on the left*/
+  float: left; /* third body stuff on the left*/
   text-align: center;
   background-color: #52c5f2;
   height: 500px;
-  border-radius:4%;
-  padding-top:20px;
+  border-radius: 4%;
+  padding-top: 20px;
   padding-left: 25px;
   padding-right: 25px;
 }
 
-.thirdbodyright{
-  padding-top:20px;
+.thirdbodyright {
+  padding-top: 20px;
   padding-left: 25px;
   padding-right: 25px;
-  border-radius:4%;
+  border-radius: 4%;
   height: 500px;
   width: 49%;
-  float: right;         /*third body on the right*/
+  float: right; /*third body on the right*/
   text-align: center;
   background-color: #0ecc7a;
 }
 
-.bodyleft{
-  margin-top: 10px;      /*footer body on the left*/
-  width:50%;
-  float:left;
-  height:120px;
-  background-color: #080c36
+.bodyleft {
+  margin-top: 10px; /*footer body on the left*/
+  width: 50%;
+  float: left;
+  height: 120px;
+  background-color: #080c36;
 }
 
-.bodyright{
-  margin-top: 10px;   /*footer body on the right*/
-  width:50%;
-  float:right;
-  height:120px;
-  background-color:#080c36
+.bodyright {
+  margin-top: 10px; /*footer body on the right*/
+  width: 50%;
+  float: right;
+  height: 120px;
+  background-color: #080c36;
 }
-
 
 /*viewpage*/
-.col-lg-4{
-  padding-top:10px;
+.col-lg-4 {
+  padding-top: 10px;
   border-radius: 3%;
- }
+}
 .one {
   width: 350px;
   height: 220px;
   background: white;
   border-radius: 3%;
   color: white;
-  box-shadow: 5px 5px rgba(0,0,0,.15);
-  transition: all .4s ease;
+  box-shadow: 5px 5px rgba(0, 0, 0, 0.15);
+  transition: all 0.4s ease;
 }
 .one:hover {
-  border-radius: 0% 0% 10% 10% / 0% 0% 3% 3% ;
-  box-shadow: 5px 5px rgba(0,0,0,.35);
+  border-radius: 0% 0% 10% 10% / 0% 0% 3% 3%;
+  box-shadow: 5px 5px rgba(0, 0, 0, 0.35);
 }
-.green{
+.green {
   color: green;
   font-size: 22px;
 }
-.yellow{
-  color:rgb(235, 235, 22);
+.yellow {
+  color: rgb(235, 235, 22);
   font-size: 22px;
 }
-.green-yellow{
-  color:#b0e600;
+.green-yellow {
+  color: #b0e600;
   font-size: 22px;
 }
-.orange{
-  color:orange;
+.orange {
+  color: orange;
   font-size: 22px;
 }
-.red{
-  color:red;
+.red {
+  color: red;
   font-size: 22px;
 }
-.brown{
+.brown {
   color: #960606;
   font-size: 22px;
 }
-.blue{
+.blue {
   color: blue;
   font-size: 22px;
 }
 
-.Store{
+.Store {
   font-family: Arial, Helvetica, sans-serif;
-      color:black;
+  color: black;
   font-size: 29px;
 }
-.Address{
-  color:black;
-  padding-top:20px;
-  padding-bottom:20px;
+.Address {
+  color: black;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
-.greeting{
-  position:relative;
-  top:180px;
+.greeting {
+  position: relative;
+  top: 120px;
   left: 300px;
-  font-size:30px;
+  font-size: 30px;
 }
-.one{          /*each box with store/address/busyness*/
+.one {
+  /*each box with store/address/busyness*/
   text-align: left;
-  padding:30px;
+  padding: 30px;
 }
-.all{
+.all {
   position: relative;
   min-height: 100vh;
 }
 
-.content-wrap{
+.content-wrap {
   padding-bottom: 120px;
 }
 
-.footertext1{
-  color:white;
-  float:left;     
-  padding-top:95px;            /* footertext on left*/
-  padding-left:10px;
+.footertext1 {
+  color: white;
+  float: left;
+  padding-top: 95px; /* footertext on left*/
+  padding-left: 10px;
 }
 
-.footertext2{
-  color:white;      /*footer text on right*/
-  float:right;
-  padding-top:95px;
+.footertext2 {
+  color: white; /*footer text on right*/
+  float: right;
+  padding-top: 95px;
   padding-right: 10px;
 }
 
-.footerbottom{
-  position:absolute;             /*the whole div*/
+.footerbottom {
+  position: absolute; /*the whole div*/
   width: 100%;
-  bottom:0;
+  bottom: 0;
   height: 120px;
 }
 
-.viewing{
-  display:inline-block;             /*the whole div at the on viewing page*/
+.viewing {
+  display: inline-block;
+  text-align: center;
+  margin-top: 2rem;
+  width: 100%; /*the whole div at the on viewing page*/
 }
 
-.actualButton1{
-  border: 2px solid rgb(29, 42, 156); 
+.actualButton1 {
+  border: 2px solid rgb(29, 42, 156);
   color: rgb(29, 42, 156);
-
+  height: 4rem;
 }
-#radius{
-  margin-right:30px;
+#radius {
+  margin-right: 30px;
+  font-size: 2rem;
 }
 
 /*Submitpage*/
-.button2{                      /*div with the button*/
-  display:inline-block;
-  width:33.3%;
-  text-align:left;
+.button2 {
+  /*div with the button*/
+  display: inline-block;
+  width: 33.3%;
+  text-align: left;
 }
-.submitter{              /*busyness submit button*/
+.submitter {
+  /*busyness submit button*/
   color: rgb(29, 42, 156);
 }
-.actualButton2{
-  border: 2px solid rgb(29, 42, 156); 
+.actualButton2 {
+  border: 2px solid rgb(29, 42, 156);
   color: rgb(29, 42, 156);
 }
 
-.submitToggle{                /*toggler div*/
-  display:inline-block;
-  text-align:center;
-  width:33.3%;
+.submitToggle {
+  /*toggler div*/
+  display: inline-block;
+  text-align: center;
+  width: 33.3%;
   top: -20;
-  position:relative;
-} 
-#helping{                     /*the pic*/
-padding-top:5px;
+  position: relative;
+}
+#helping {
+  /*the pic*/
+  padding-top: 5px;
 }
 
-.location{             /*div with the location textbox*/
-  display:inline-block;
-  position:relative;
-  width:33.3%;
+.location {
+  /*div with the location textbox*/
+  display: inline-block;
+  position: relative;
+  width: 33.3%;
   text-align: right;
 }
-.location5{          /*textbox*/
-  width:50%;
- }
+.location5 {
+  /*textbox*/
+  width: 50%;
+}
 
- .hover1{
-   text-align:center;    /*hover text*/
- }
- 
+.hover1 {
+  text-align: center; /*hover text*/
+}
