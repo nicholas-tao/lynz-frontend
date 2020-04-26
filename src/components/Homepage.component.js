@@ -74,7 +74,7 @@ import { Link } from 'react-router-dom';
     
         <div className = "footer">
             <div className = "bodyleft">
-              <p className = "footertext1"> Created by Adam Lam, Matthew Jiao, Nicholas Tao</p>
+              <p className = "footertext1">Created by Adam Lam, Matthew Jiao, Nicholas Tao</p>
             </div>
 
             <div className = "bodyright" >

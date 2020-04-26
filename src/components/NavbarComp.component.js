@@ -8,7 +8,6 @@ import {
   NavLink,
 } from "reactstrap";
 import logo from "../images/shopping-cart.png";
-import corona from "..//images/corona.jpg"
 
 class NavbarComp extends Component{
   render(){
@@ -23,18 +22,16 @@ class NavbarComp extends Component{
             height="39px"
             className="d-inline-block align-top"
            />{' '}
-            Lynz
+            Lynz  &nbsp; 
          </NavbarBrand>
             <Nav className="mr-auto">
               <NavItem>
-                <NavLink href="/busyness">View Busyness</NavLink>
+                <NavLink href="/busyness" className = "navbartext">View Busyness</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/submit">Submit Live Busyness</NavLink>
+                <NavLink href="/submit" className = "navbartext">Submit Live Busyness</NavLink>
               </NavItem>
-              {/* <NavItem>
-                <NavLink href="/scheduler">Submit Scheduled Trip</NavLink>
-              </NavItem> */}
+
             </Nav>
         </Navbar>
       </div>

@@ -1,11 +1,14 @@
 /*nav bar*/
 #navbar-brand {
-  font-size: 40px;
-  font-family: "Acme", Helvetica, sans-serif
+  font-size: 42px;
+  font-family: "New Courier", Helvetica, sans-serif
 }
 
 .nav{
   background-color: #f2f3f7
+}
+.navbartext{
+  font-size: 17px;
 }
 
 #logo{
@@ -152,7 +155,7 @@
   font-size: 22px;
 }
 .yellow{
-  color:yellow;
+  color:rgb(235, 235, 22);
   font-size: 22px;
 }
 .green-yellow{
@@ -171,6 +174,10 @@
   color: #960606;
   font-size: 22px;
 }
+.blue{
+  color: blue;
+  font-size: 22px;
+}
 
 .Store{
   font-family: Arial, Helvetica, sans-serif;
@@ -185,7 +192,7 @@
 .greeting{
   position:relative;
   top:180px;
-  left: 310px;
+  left: 300px;
   font-size:30px;
 }
 .one{          /*each box with store/address/busyness*/

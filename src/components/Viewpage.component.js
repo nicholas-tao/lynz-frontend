@@ -60,6 +60,7 @@ class Viewpage extends React.Component {
       longitude: this.state.longitude,
       radius: this.state.radius,
     };
+    //uncomment!
     /*  axios
       .post("http://localhost:5000/busyness/view", coordsAndRadius)
       .then((res) => console.log(res.data));
@@ -71,12 +72,13 @@ class Viewpage extends React.Component {
         this.setState({ storedata: response.data }); //for nick the line assignment thats needed is at 153
         //see if you can store the object (not object.data) into somewhere then go to line 154
         console.log(response.data);
+        test = response; see line 154; 
       })
       .catch((error) => {
         console.log(error);
       });*/
     //pass the file into here as test
-      this.makeGrid(test); // im not sure if this method really does anything 
+    this.makeGrid(test); // im not sure if this method really does anything 
 
     console.log(this.state);
     this.setState({
@@ -122,7 +124,8 @@ computeClass(e){
     "yellow": e == "Moderately Busy",
     "orange": e == "Busy",
     "red": e == "Very Busy",
-    "brown": e == "Extremely Busy"
+    "brown": e == "Extremely Busy",
+    "blue": e == "Insufficient Data"
   }
 );
   return (

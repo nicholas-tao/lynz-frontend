@@ -5,7 +5,6 @@ import NavbarComp from "./components/NavbarComp.component";
 import Homepage from "./components/Homepage.component";
 import Viewpage from "./components/Viewpage.component";
 import Submitpage from "./components/Submitpage.component";
-import Scheduler from "./components/Scheduler.component";
 import "./App.css";
 
 function App() {
@@ -17,7 +16,6 @@ function App() {
         <Route path="/" exact component={Homepage} />
         <Route path="/busyness" component={Viewpage} />
         <Route path="/submit" component={Submitpage} />
-        <Route path="/scheduler" component={Scheduler} />
       </div>
     </Router>
   );
