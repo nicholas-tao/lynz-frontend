@@ -15,9 +15,9 @@ export default class App extends React.Component {
           <div>
             <NavbarComp />
             <Switch>
-              <Route exactly component={Homepage} pattern="/" />
-              <Route exactly component={Viewpage} pattern="/busyness" />
-              <Route exactly component={Submitpage} pattern="/submit" />
+              <Route exact component={Homepage} path="/" />
+              <Route exact component={Viewpage} path="/busyness" />
+              <Route exact component={Submitpage} path="/submit" />
             </Switch>
           </div>
         </BrowserRouter>

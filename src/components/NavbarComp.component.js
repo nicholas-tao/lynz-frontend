@@ -23,7 +23,7 @@ class NavbarComp extends Component {
           <Nav className="mr-auto">
             <NavItem>
               <Link className="navbartext" to="/busyness">
-                View Busyness &nbsp; &nbsp; &nbsp;
+                View Busyness &nbsp;
               </Link>
             </NavItem>
             <NavItem>
