@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./Components.css";
 import { Navbar, NavbarBrand, Nav, NavItem, NavLink } from "reactstrap";
 import logo from "../images/shopping-cart.png";
+import { Link } from "react-router-dom";
 
 class NavbarComp extends Component {
   render() {
@@ -21,14 +22,14 @@ class NavbarComp extends Component {
           </NavbarBrand>
           <Nav className="mr-auto">
             <NavItem>
-              <NavLink href="/busyness" className="navbartext">
-                View Busyness
-              </NavLink>
+              <Link className="navbartext" to="/busyness">
+                View Busyness &nbsp; &nbsp; &nbsp;
+              </Link>
             </NavItem>
             <NavItem>
-              <NavLink href="/submit" className="navbartext">
+              <Link className="navbartext" to="/submit">
                 Submit Live Busyness
-              </NavLink>
+              </Link>
             </NavItem>
           </Nav>
         </Navbar>

@@ -1,5 +1,5 @@
 import React from "react";
-import { HashRouter, Route } from "react-router-dom";
+import { Link, Switch, Route, BrowserRouter } from "react-router-dom";
 import NavbarComp from "./components/NavbarComp.component";
 import Homepage from "./components/Homepage.component";
 import Viewpage from "./components/Viewpage.component";
@@ -11,12 +11,16 @@ export default class App extends React.Component {
   render() {
     return (
       <Container fluid={true}>
-        <HashRouter>
-          <NavbarComp />
-          <Route path={process.env.PUBLIC_URL} component={Homepage} />
-          <Route path={"/busyness"} component={Viewpage} />
-          <Route path={"/submit"} component={Submitpage} />
-        </HashRouter>
+        <BrowserRouter>
+          <div>
+            <NavbarComp />
+            <Switch>
+              <Route exactly component={Homepage} pattern="/" />
+              <Route exactly component={Viewpage} pattern="/busyness" />
+              <Route exactly component={Submitpage} pattern="/submit" />
+            </Switch>
+          </div>
+        </BrowserRouter>
       </Container>
     );
   }
