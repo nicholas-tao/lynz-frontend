@@ -1,5 +1,4 @@
 import React from "react";
-/*import "bootstrap/dist/css/bootstrap.min.css"; */
 import { HashRouter, Route } from "react-router-dom";
 import NavbarComp from "./components/NavbarComp.component";
 import Homepage from "./components/Homepage.component";
@@ -11,7 +10,7 @@ import { Container } from "reactstrap";
 export default class App extends React.Component {
   render() {
     return (
-      <Container>
+      <Container fluid={true}>
         <HashRouter>
           <NavbarComp />
           <Route path={process.env.PUBLIC_URL} component={Homepage} />
