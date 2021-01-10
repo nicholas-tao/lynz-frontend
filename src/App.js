@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Switch, Route, BrowserRouter } from "react-router-dom";
+import { Switch, Route, BrowserRouter } from "react-router-dom";
 import NavbarComp from "./components/NavbarComp.component";
 import Homepage from "./components/Homepage.component";
 import Viewpage from "./components/Viewpage.component";

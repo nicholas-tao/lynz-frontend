@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import "./Components.css";
 //import test from "./test.json"; //@NICK CHANGE HERE
-import test from "./test2.json";
+//import test from "./test2.json";
 //var test = [];
 var classNames = require("classnames");
 
@@ -23,14 +23,14 @@ class Viewpage extends React.Component {
       textClass: this.computeClass(0),
     };
   }
-  makeGrid(test) {
-    this.changeStoredata(test);
-    console.log("hi");
+  makeGrid(data) {
+    this.changeStoredata(data);
+    console.log("makegrid");
   }
 
-  changeStoredata(test) {
+  changeStoredata(res) {
     this.setState({
-      storedata: test.data,
+      storedata: res.data,
       received: true,
     });
   }
@@ -69,18 +69,25 @@ class Viewpage extends React.Component {
       .then((res) => console.log(res.data));
 */
     axios
-      .get("http://localhost:5000/busyness/getstores")
+      .post("http://localhost:5000/busyness/getstores", {
+        data: {
+          latitude: this.state.latitude,
+          longitude: this.state.longitude,
+          radius: this.state.radius,
+        },
+      })
       .then((response) => {
-        //this.setState({ storedata: response.data }); //for nick the line assignment thats needed is at 153
+        var res = response.data;
+        this.changeStoredata(res);
+        console.log("res:" + res);
+        //pass the file into here as test
+        this.makeGrid(res); // im not sure if this method really does anything // I think replace this with the response
+        this.setState({ storedata: res }); //for nick the line assignment thats needed is at 153
         //see if you can store the object (not object.data) into somewhere then go to line 154
-        console.log(response.data);
-        test = response.data;
       })
       .catch((error) => {
         console.log(error);
       });
-    //pass the file into here as test
-    this.makeGrid(test); // im not sure if this method really does anything
 
     console.log(this.state);
     this.setState({
@@ -119,13 +126,13 @@ class Viewpage extends React.Component {
 
   computeClass(e) {
     var btnClass = classNames({
-      green: e == "Not Busy",
-      "green-yellow": e == "Somewhat Busy",
-      yellow: e == "Moderately Busy",
-      orange: e == "Busy",
-      red: e == "Very Busy",
-      brown: e == "Extremely Busy",
-      blue: e == "Insufficient Data",
+      green: e === "Not Busy",
+      "green-yellow": e === "Somewhat Busy",
+      yellow: e === "Moderately Busy",
+      orange: e === "Busy",
+      red: e === "Very Busy",
+      brown: e === "Extremely Busy",
+      blue: e === "Insufficient Data",
     });
     return (
       <div className={btnClass}>
@@ -137,8 +144,7 @@ class Viewpage extends React.Component {
   render() {
     let data = "";
     if (this.state.received === true) {
-      data = test.data; //setting a variable (data) to the json.data
-
+      data = this.state.storedata; //setting a variable (data) to the json.data //to change the test thing
       // }
     }
     return (

@@ -134,8 +134,8 @@ class Submitpage extends React.Component {
 
   onSubmit(e) {
     this.setState({
-      received:true
-    })
+      received: true,
+    });
     e.preventDefault(); //idk what this does; maybe prevents empty fields from being sent
 
     const busynessToSend = {
@@ -156,10 +156,10 @@ class Submitpage extends React.Component {
   }
 
   render() {
-    let thanks = ""
-    if (this.state.received == true){
+    let thanks = "";
+    if (this.state.received === true) {
       console.log("HIII");
-      thanks = "Thank you for submitting"
+      thanks = "Thank you for submitting";
     }
     return (
       <div className="allsubmit">
@@ -349,7 +349,7 @@ class Submitpage extends React.Component {
               {" "}
               Submit!{" "}
             </button>
-            <p className = "actualText"> &nbsp; &nbsp; {thanks} </p>
+            <p className="actualText"> &nbsp; &nbsp; {thanks} </p>
           </div>
         </div>
         <div className="helpingpic">

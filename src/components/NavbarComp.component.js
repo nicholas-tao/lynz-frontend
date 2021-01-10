@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./Components.css";
-import { Navbar, NavbarBrand, Nav, NavItem, NavLink } from "reactstrap";
+import { Navbar, NavbarBrand, Nav, NavItem } from "reactstrap";
 import logo from "../images/shopping-cart.png";
 import { Link } from "react-router-dom";
 
