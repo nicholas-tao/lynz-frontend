@@ -67,7 +67,7 @@ class Viewpage extends React.Component {
     /*   axios
       .post("http://localhost:5000/busyness/view", coordsAndRadius)
       .then((res) => console.log(res.data));
-
+*/
     axios
       .get("http://localhost:5000/busyness/getstores")
       .then((response) => {
@@ -78,7 +78,7 @@ class Viewpage extends React.Component {
       })
       .catch((error) => {
         console.log(error);
-      });*/
+      });
     //pass the file into here as test
     this.makeGrid(test); // im not sure if this method really does anything
 
