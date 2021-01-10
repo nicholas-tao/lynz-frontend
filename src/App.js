@@ -10,7 +10,7 @@ import { Container } from "reactstrap";
 export default class App extends React.Component {
   render() {
     return (
-      <Container fluid={true}>
+      <Container>
         <BrowserRouter>
           <div>
             <NavbarComp />

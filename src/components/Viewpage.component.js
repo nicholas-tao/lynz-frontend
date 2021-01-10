@@ -97,7 +97,7 @@ class Viewpage extends React.Component {
 
   renderMatches(data) {
     if (this.state.received) {
-      console.log("true");
+      //console.log("true");
       return data.map((data) => {
         return (
           <div className="col-lg-4">
@@ -144,7 +144,7 @@ class Viewpage extends React.Component {
   render() {
     let data = "";
     if (this.state.received) {
-      console.log("state of storedata" + this.state.storedata);
+      //console.log("state of storedata" + this.state.storedata);
       data = this.state.storedata; //setting a variable (data) to the json.data //to change the test thing
       // }
     }
