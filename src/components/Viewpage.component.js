@@ -58,18 +58,8 @@ class Viewpage extends React.Component {
     // test = [];
     e.preventDefault();
 
-    const coordsAndRadius = {
-      latitude: this.state.latitude,
-      longitude: this.state.longitude,
-      radius: this.state.radius,
-    };
-
-    /*   axios
-      .post("http://localhost:5000/busyness/view", coordsAndRadius)
-      .then((res) => console.log(res.data));
-*/
     axios
-      .post("http://localhost:5000/busyness/getstores", {
+      .post("https://lynz-backend.herokuapp.com/busyness/getstores", {
         data: {
           latitude: this.state.latitude,
           longitude: this.state.longitude,
