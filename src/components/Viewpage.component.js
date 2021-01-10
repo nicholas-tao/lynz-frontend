@@ -30,7 +30,7 @@ class Viewpage extends React.Component {
 
   changeStoredata(res) {
     this.setState({
-      storedata: res.data,
+      storedata: res,
       received: true,
     });
   }
@@ -81,7 +81,7 @@ class Viewpage extends React.Component {
         this.changeStoredata(res);
         console.log("res:" + res);
         //pass the file into here as test
-        this.makeGrid(res); // im not sure if this method really does anything // I think replace this with the response
+        //this.makeGrid(res); // im not sure if this method really does anything // I think replace this with the response
         this.setState({ storedata: res }); //for nick the line assignment thats needed is at 153
         //see if you can store the object (not object.data) into somewhere then go to line 154
       })
@@ -96,7 +96,7 @@ class Viewpage extends React.Component {
   }
 
   renderMatches(data) {
-    if (this.state.received === true) {
+    if (this.state.received) {
       console.log("true");
       return data.map((data) => {
         return (
@@ -143,7 +143,8 @@ class Viewpage extends React.Component {
 
   render() {
     let data = "";
-    if (this.state.received === true) {
+    if (this.state.received) {
+      console.log("state of storedata" + this.state.storedata);
       data = this.state.storedata; //setting a variable (data) to the json.data //to change the test thing
       // }
     }
