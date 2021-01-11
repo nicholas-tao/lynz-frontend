@@ -1,8 +1,7 @@
 import React from "react";
 import axios from "axios";
 import "./Components.css";
-//import test from "./test.json"; //@NICK CHANGE HERE
-//import test from "./test2.json";
+import test from "./test.json";
 //var test = [];
 var classNames = require("classnames");
 
@@ -68,6 +67,7 @@ class Viewpage extends React.Component {
       })
       .then((response) => {
         var res = response.data;
+        if (res === undefined || res.length === 0) res = test;
         this.changeStoredata(res);
         console.log("res:" + res);
         //pass the file into here as test
