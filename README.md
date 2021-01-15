@@ -2,6 +2,8 @@
 
 **Outsmarting lines, together**
 
+![Demo Gif](https://github.com/nicholas-tao/lynz-frontend/gifs/demo.gif)
+
 [Visit Devpost Page](https://devpost.com/software/lynz)
 
 [Demo Video](https://youtu.be/DzKA0FkMRdE)
