@@ -87,8 +87,9 @@ class Viewpage extends React.Component {
 
   renderMatches(data) {
     if (this.state.received) {
+      //console.log(Object.values(data));
       //console.log("true");
-      return data.map((data) => {
+      return Object.values(data)[0].map((data) => {
         return (
           <div className="col-lg-4">
             <div className="one">
